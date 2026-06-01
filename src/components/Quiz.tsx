@@ -53,7 +53,7 @@ function shuffleArray<T>(arr: T[]): T[] {
 // ── LocalStorage (Mode Biasa — persists across refresh & tab close) ────────────
 
 const LS_KEY = 'quiz_biasa_progress'
-const LS_VERSION = 2
+const LS_VERSION = 3
 
 interface SavedBiasaState {
   version: number
