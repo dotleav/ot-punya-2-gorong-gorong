@@ -50,102 +50,138 @@ function shuffleArray<T>(arr: T[]): T[] {
   return a
 }
 
-// ── Session Storage ────────────────────────────────────────────────────────────
+// ── LocalStorage (Mode Biasa — persists across refresh & tab close) ────────────
 
-const SS_KEY = 'quiz_progress'
+const LS_KEY = 'quiz_biasa_progress'
 
-interface SavedState {
-  quizMode: QuizMode
-  appState: AppState
+interface SavedBiasaState {
   selectedCategory: string
   shuffleOn: boolean
   activeQuestions: Question[]
   answers: AnswerState[]
-  currentIdx: number
-  timeLeft: number
-  qPhase: QuestionPhase
 }
 
-function loadSession(): SavedState | null {
+function loadBiasa(): SavedBiasaState | null {
   try {
-    const raw = sessionStorage.getItem(SS_KEY)
-    return raw ? (JSON.parse(raw) as SavedState) : null
+    const raw = localStorage.getItem(LS_KEY)
+    return raw ? (JSON.parse(raw) as SavedBiasaState) : null
   } catch {
     return null
   }
 }
 
-function saveSession(state: SavedState) {
+function saveBiasa(state: SavedBiasaState) {
   try {
-    sessionStorage.setItem(SS_KEY, JSON.stringify(state))
+    localStorage.setItem(LS_KEY, JSON.stringify(state))
   } catch { /* quota exceeded — silently ignore */ }
 }
 
-function clearSession() {
-  try { sessionStorage.removeItem(SS_KEY) } catch { /* noop */ }
+function clearBiasa() {
+  try { localStorage.removeItem(LS_KEY) } catch { /* noop */ }
 }
 
 // ── Root Component ─────────────────────────────────────────────────────────────
 
 export default function Quiz() {
-  // ── Restore from session storage (survives refresh, resets on tab close) ──
-  const saved = loadSession()
+  const [questions, setQuestions] = useState<Question[]>([])
+  const [quizMode, setQuizMode]   = useState<QuizMode>('biasa')
 
-  const [questions, setQuestions]           = useState<Question[]>([])
-  const [quizMode, setQuizMode]             = useState<QuizMode>(saved?.quizMode ?? 'biasa')
-  const [appState, setAppState]             = useState<AppState>(saved?.appState ?? 'setup')
-  const [selectedCategory, setSelectedCat] = useState(saved?.selectedCategory ?? 'Semua')
-  const [shuffleOn, setShuffleOn]           = useState(saved?.shuffleOn ?? false)
-  const [activeQuestions, setActiveQs]      = useState<Question[]>(saved?.activeQuestions ?? [])
-  const [answers, setAnswers]               = useState<AnswerState[]>(saved?.answers ?? [])
+  // Mode Biasa state — loaded from localStorage on mount
+  const [biasaActive, setBiasaActive]             = useState(false) // true = running biasa
+  const [biasaCategory, setBiasaCategory]         = useState('Semua')
+  const [biasaShuffleOn, setBiasaShuffleOn]       = useState(false)
+  const [biasaQuestions, setBiasaQuestions]       = useState<Question[]>([])
+  const [biasaAnswers, setBiasaAnswers]           = useState<AnswerState[]>([])
 
-  // Tentamen state
-  const [currentIdx, setCurrentIdx]         = useState(saved?.currentIdx ?? 0)
-  // Paused timers resume at saved value; if answering was in progress give a 3-sec grace
-  const [timeLeft, setTimeLeft]             = useState(
-    saved?.qPhase === 'answering' ? Math.max(saved.timeLeft - 3, 1) : (saved?.timeLeft ?? EXAM_TIMER)
-  )
-  const [qPhase, setQPhase]                 = useState<QuestionPhase>(saved?.qPhase ?? 'answering')
+  // Mode Tentamen state — ephemeral, no storage
+  const [tentamenState, setTentamenState]         = useState<AppState>('setup')
+  const [tentamenCategory, setTentamenCategory]   = useState('Semua')
+  const [tentamenShuffleOn, setTentamenShuffleOn] = useState(false)
+  const [tentamenQuestions, setTentamenQuestions] = useState<Question[]>([])
+  const [tentamenAnswers, setTentamenAnswers]     = useState<AnswerState[]>([])
+  const [currentIdx, setCurrentIdx]               = useState(0)
+  const [timeLeft, setTimeLeft]                   = useState(EXAM_TIMER)
+  const [qPhase, setQPhase]                       = useState<QuestionPhase>('answering')
 
-  // Ref to always hold latest "is quiz running" flag for beforeunload handler
-  const isRunningRef = useRef(appState === 'running')
-  useEffect(() => { isRunningRef.current = appState === 'running' }, [appState])
+  // Ref for beforeunload
+  const isTentamenRunningRef = useRef(false)
+  useEffect(() => {
+    isTentamenRunningRef.current = quizMode === 'tentamen' && tentamenState === 'running'
+  }, [quizMode, tentamenState])
 
-  // ── beforeunload confirmation when quiz is active ──
+  // ── beforeunload warning only when tentamen is active ──
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (!isRunningRef.current) return
+      if (!isTentamenRunningRef.current) return
       e.preventDefault()
-      e.returnValue = '' // required for Chrome to show the dialog
+      e.returnValue = ''
     }
     window.addEventListener('beforeunload', handleBeforeUnload)
     return () => window.removeEventListener('beforeunload', handleBeforeUnload)
   }, [])
 
+  // ── Load questions ──
   useEffect(() => {
     fetch('./questions.json')
       .then(r => r.json())
       .then((data: Question[]) => setQuestions(data))
   }, [])
 
-  // ── Timer countdown ──
+  // ── Restore biasa progress from localStorage once questions are loaded ──
   useEffect(() => {
-    if (appState !== 'running' || quizMode !== 'tentamen' || qPhase !== 'answering') return
+    if (questions.length === 0) return
+    const saved = loadBiasa()
+    if (saved && saved.activeQuestions.length > 0) {
+      setBiasaCategory(saved.selectedCategory)
+      setBiasaShuffleOn(saved.shuffleOn)
+      setBiasaQuestions(saved.activeQuestions)
+      setBiasaAnswers(saved.answers)
+      setBiasaActive(true)
+    } else {
+      // Auto-start biasa mode with default settings
+      autoStartBiasa(questions, 'Semua', false)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [questions])
+
+  function autoStartBiasa(allQs: Question[], cat: string, shuffle: boolean) {
+    const base = cat === 'Semua' ? allQs : allQs.filter(q => q.category === cat)
+    const qs = shuffle ? shuffleArray(base) : base
+    if (!qs.length) return
+    setBiasaQuestions(qs)
+    setBiasaAnswers(new Array(qs.length).fill(null))
+    setBiasaActive(true)
+  }
+
+  // ── Persist biasa state to localStorage whenever it changes ──
+  useEffect(() => {
+    if (!biasaActive || biasaQuestions.length === 0) return
+    saveBiasa({
+      selectedCategory: biasaCategory,
+      shuffleOn: biasaShuffleOn,
+      activeQuestions: biasaQuestions,
+      answers: biasaAnswers,
+    })
+  }, [biasaActive, biasaCategory, biasaShuffleOn, biasaQuestions, biasaAnswers])
+
+  // ── Tentamen: timer countdown ──
+  useEffect(() => {
+    if (quizMode !== 'tentamen' || tentamenState !== 'running' || qPhase !== 'answering') return
     if (timeLeft === 0) {
-      setAnswers(prev => { const n = [...prev]; n[currentIdx] = 'skipped'; return n })
+      setTentamenAnswers(prev => { const n = [...prev]; n[currentIdx] = 'skipped'; return n })
       setQPhase('answered_timeout')
       return
     }
     const t = setTimeout(() => setTimeLeft(p => p - 1), 1000)
     return () => clearTimeout(t)
-  }, [appState, quizMode, qPhase, timeLeft, currentIdx])
+  }, [quizMode, tentamenState, qPhase, timeLeft, currentIdx])
 
-  // ── Auto-advance on timeout ──
+  // ── Tentamen: auto-advance on timeout ──
   useEffect(() => {
-    if (appState !== 'running' || quizMode !== 'tentamen' || qPhase !== 'answered_timeout') return
+    if (quizMode !== 'tentamen' || tentamenState !== 'running' || qPhase !== 'answered_timeout') return
     const t = setTimeout(() => {
-      if (currentIdx >= activeQuestions.length - 1) {
-        setAppState('finished')
+      if (currentIdx >= tentamenQuestions.length - 1) {
+        setTentamenState('finished')
       } else {
         setCurrentIdx(p => p + 1)
         setTimeLeft(EXAM_TIMER)
@@ -153,76 +189,72 @@ export default function Quiz() {
       }
     }, 1800)
     return () => clearTimeout(t)
-  }, [appState, quizMode, qPhase, currentIdx, activeQuestions.length])
+  }, [quizMode, tentamenState, qPhase, currentIdx, tentamenQuestions.length])
 
-  // ── Persist quiz state to sessionStorage (auto-reset on tab close) ──
-  useEffect(() => {
-    if (appState === 'setup') {
-      clearSession()
-      return
-    }
-    saveSession({
-      quizMode,
-      appState,
-      selectedCategory,
-      shuffleOn,
-      activeQuestions,
-      answers,
-      currentIdx,
-      timeLeft,
-      qPhase,
-    })
-  }, [quizMode, appState, selectedCategory, shuffleOn, activeQuestions, answers, currentIdx, timeLeft, qPhase])
+  // ── Derived ──
+  const buildQuestions = useCallback((cat: string, shuffle: boolean, allQs: Question[]): Question[] => {
+    const base = cat === 'Semua' ? allQs : allQs.filter(q => q.category === cat)
+    return shuffle ? shuffleArray(base) : base
+  }, [])
 
   const categories = ['Semua', ...Array.from(new Set(questions.map(q => q.category))).sort()]
 
-  const buildQuestions = useCallback((cat: string, shuffle: boolean): Question[] => {
-    const base = cat === 'Semua' ? questions : questions.filter(q => q.category === cat)
-    return shuffle ? shuffleArray(base) : base
-  }, [questions])
-
-  const startQuiz = useCallback(() => {
-    const qs = buildQuestions(selectedCategory, shuffleOn)
+  // ── Mode Biasa handlers ──
+  const handleResetBiasa = useCallback(() => {
+    clearBiasa()
+    const qs = buildQuestions(biasaCategory, biasaShuffleOn, questions)
     if (!qs.length) return
-    setActiveQs(qs)
-    setAnswers(new Array(qs.length).fill(null))
-    setCurrentIdx(0)
-    setTimeLeft(EXAM_TIMER)
-    setQPhase('answering')
-    setAppState('running')
-  }, [buildQuestions, selectedCategory, shuffleOn])
+    setBiasaQuestions(qs)
+    setBiasaAnswers(new Array(qs.length).fill(null))
+    setBiasaActive(true)
+  }, [biasaCategory, biasaShuffleOn, buildQuestions, questions])
 
-  const resetToSetup = useCallback(() => {
-    clearSession()
-    setAppState('setup')
-    setActiveQs([])
-    setAnswers([])
-  }, [])
-
-  const handleModeChange = (mode: QuizMode) => {
-    setQuizMode(mode)
-    if (appState !== 'setup') resetToSetup()
+  const handleBiasaFilterChange = (cat: string) => {
+    setBiasaCategory(cat)
+    const qs = buildQuestions(cat, biasaShuffleOn, questions)
+    if (!qs.length) return
+    setBiasaQuestions(qs)
+    setBiasaAnswers(new Array(qs.length).fill(null))
+    clearBiasa()
   }
 
-  const handleFilterChange = (cat: string) => {
-    setSelectedCat(cat)
-    if (appState !== 'setup') resetToSetup()
-  }
-
-  const handleShuffleToggle = () => {
-    setShuffleOn(p => !p)
-    if (appState !== 'setup') resetToSetup()
+  const handleBiasaShuffleToggle = () => {
+    const next = !biasaShuffleOn
+    setBiasaShuffleOn(next)
+    const qs = buildQuestions(biasaCategory, next, questions)
+    if (!qs.length) return
+    setBiasaQuestions(qs)
+    setBiasaAnswers(new Array(qs.length).fill(null))
+    clearBiasa()
   }
 
   const handleAnswerBiasa = useCallback((qIdx: number, optIdx: number) => {
-    setAnswers(prev => {
+    setBiasaAnswers(prev => {
       if (prev[qIdx] !== null) return prev
       const n = [...prev]; n[qIdx] = optIdx; return n
     })
   }, [])
 
+  // ── Mode Tentamen handlers ──
+  const handleStartTentamen = useCallback(() => {
+    const qs = buildQuestions(tentamenCategory, tentamenShuffleOn, questions)
+    if (!qs.length) return
+    setTentamenQuestions(qs)
+    setTentamenAnswers(new Array(qs.length).fill(null))
+    setCurrentIdx(0)
+    setTimeLeft(EXAM_TIMER)
+    setQPhase('answering')
+    setTentamenState('running')
+  }, [buildQuestions, tentamenCategory, tentamenShuffleOn, questions])
+
+  const handleResetTentamen = useCallback(() => {
+    setTentamenState('setup')
+    setTentamenQuestions([])
+    setTentamenAnswers([])
+  }, [])
+
   const handleAnswerTentamen = useCallback((optIdx: number) => {
-    setAnswers(prev => {
+    setTentamenAnswers(prev => {
       if (prev[currentIdx] !== null) return prev
       const n = [...prev]; n[currentIdx] = optIdx; return n
     })
@@ -230,20 +262,33 @@ export default function Quiz() {
   }, [currentIdx])
 
   const goNext = useCallback(() => {
-    if (currentIdx >= activeQuestions.length - 1) {
-      setAppState('finished')
+    if (currentIdx >= tentamenQuestions.length - 1) {
+      setTentamenState('finished')
     } else {
       setCurrentIdx(p => p + 1)
       setTimeLeft(EXAM_TIMER)
       setQPhase('answering')
     }
-  }, [currentIdx, activeQuestions.length])
+  }, [currentIdx, tentamenQuestions.length])
 
-  const questionCount    = buildQuestions(selectedCategory, false).length
-  const answeredCount    = answers.filter(a => a !== null).length
-  const correctCount     = answers.filter((a, i) => typeof a === 'number' && a === activeQuestions[i]?.correct).length
+  // ── Switch mode ──
+  const handleModeChange = (mode: QuizMode) => {
+    if (mode === quizMode) return
+    setQuizMode(mode)
+    // Entering tentamen always starts from setup
+    if (mode === 'tentamen') {
+      setTentamenState('setup')
+      setTentamenQuestions([])
+      setTentamenAnswers([])
+    }
+    // Leaving tentamen back to biasa — biasa state is untouched (persisted in localStorage)
+  }
 
-  // Header height varies with content; use fixed sticky offsets
+  // ── Computed for display ──
+  const biasaAnsweredCount = biasaAnswers.filter(a => a !== null).length
+  const biasaCorrectCount  = biasaAnswers.filter((a, i) => typeof a === 'number' && a === biasaQuestions[i]?.correct).length
+  const tentamenQCount     = buildQuestions(tentamenCategory, false, questions).length
+
   return (
     <div style={{ backgroundColor: '#0d1117', minHeight: '100vh' }}>
 
@@ -270,7 +315,7 @@ export default function Quiz() {
             </div>
 
             {/* Live tracker */}
-            {appState === 'running' && quizMode === 'biasa' && (
+            {quizMode === 'biasa' && biasaActive && (
               <div style={{ textAlign: 'right', minWidth: '70px' }}>
                 <div style={{
                   fontFamily: '"JetBrains Mono", monospace',
@@ -278,14 +323,14 @@ export default function Quiz() {
                   fontSize: '0.9rem',
                   fontWeight: 700,
                 }}>
-                  {answeredCount}/{activeQuestions.length}
+                  {biasaAnsweredCount}/{biasaQuestions.length}
                 </div>
                 <div style={{ color: '#6e7681', fontSize: '0.65rem', lineHeight: 1.3 }}>
-                  dijawab · benar <span style={{ color: '#4ade80' }}>{correctCount}</span>
+                  dijawab · benar <span style={{ color: '#4ade80' }}>{biasaCorrectCount}</span>
                 </div>
               </div>
             )}
-            {appState === 'running' && quizMode === 'tentamen' && (
+            {quizMode === 'tentamen' && tentamenState === 'running' && (
               <div style={{ textAlign: 'right' }}>
                 <div style={{
                   fontFamily: '"JetBrains Mono", monospace',
@@ -293,7 +338,7 @@ export default function Quiz() {
                   fontSize: '0.9rem',
                   fontWeight: 700,
                 }}>
-                  {currentIdx + 1}/{activeQuestions.length}
+                  {currentIdx + 1}/{tentamenQuestions.length}
                 </div>
                 <div style={{ color: '#6e7681', fontSize: '0.65rem' }}>soal</div>
               </div>
@@ -324,9 +369,43 @@ export default function Quiz() {
                 {m === 'biasa' ? 'Mode Biasa' : 'Mode Tentamen'}
               </button>
             ))}
-            {appState !== 'setup' && (
+
+            {/* Reset button — only in biasa mode */}
+            {quizMode === 'biasa' && biasaActive && (
               <button
-                onClick={resetToSetup}
+                onClick={handleResetBiasa}
+                style={{
+                  marginLeft: 'auto',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  fontSize: '0.72rem',
+                  color: '#6e7681',
+                  background: 'none',
+                  border: '1px solid #30363d',
+                  cursor: 'pointer',
+                  padding: '4px 10px',
+                  borderRadius: '999px',
+                  transition: 'all 0.15s',
+                }}
+                onMouseEnter={e => {
+                  ;(e.currentTarget as HTMLButtonElement).style.color = '#c9d1d9'
+                  ;(e.currentTarget as HTMLButtonElement).style.borderColor = '#484f58'
+                }}
+                onMouseLeave={e => {
+                  ;(e.currentTarget as HTMLButtonElement).style.color = '#6e7681'
+                  ;(e.currentTarget as HTMLButtonElement).style.borderColor = '#30363d'
+                }}
+              >
+                <RotateCcw style={{ width: '11px', height: '11px' }} />
+                Reset
+              </button>
+            )}
+
+            {/* Reset button — tentamen when running or finished */}
+            {quizMode === 'tentamen' && tentamenState !== 'setup' && (
+              <button
+                onClick={handleResetTentamen}
                 style={{
                   marginLeft: 'auto',
                   display: 'flex',
@@ -370,12 +449,16 @@ export default function Quiz() {
             </span>
 
             {categories.map(cat => {
-              const active = selectedCategory === cat
+              const activeCat = quizMode === 'biasa' ? biasaCategory : tentamenCategory
+              const active = activeCat === cat
               const label  = cat === 'Semua' ? 'Semua' : cat.replace(' (Bergambar)', ' ⬜').replace('Demografi & Epidemiologi', 'Demografi')
               return (
                 <button
                   key={cat}
-                  onClick={() => handleFilterChange(cat)}
+                  onClick={() => {
+                    if (quizMode === 'biasa') handleBiasaFilterChange(cat)
+                    else setTentamenCategory(cat)
+                  }}
                   style={{
                     padding: '3px 10px',
                     borderRadius: '999px',
@@ -395,7 +478,10 @@ export default function Quiz() {
             })}
 
             <button
-              onClick={handleShuffleToggle}
+              onClick={() => {
+                if (quizMode === 'biasa') handleBiasaShuffleToggle()
+                else setTentamenShuffleOn(p => !p)
+              }}
               style={{
                 marginLeft: 'auto',
                 display: 'flex',
@@ -407,13 +493,13 @@ export default function Quiz() {
                 fontWeight: 600,
                 cursor: 'pointer',
                 transition: 'all 0.15s',
-                ...(shuffleOn
+                ...((quizMode === 'biasa' ? biasaShuffleOn : tentamenShuffleOn)
                   ? { backgroundColor: '#e8a838', color: '#0d1117', border: 'none' }
                   : { backgroundColor: 'transparent', color: '#8b949e', border: '1px solid rgba(255,255,255,0.1)' }),
               }}
             >
               <Shuffle style={{ width: '11px', height: '11px' }} />
-              Acak {shuffleOn ? 'ON' : 'OFF'}
+              Acak {(quizMode === 'biasa' ? biasaShuffleOn : tentamenShuffleOn) ? 'ON' : 'OFF'}
             </button>
           </div>
         </div>
@@ -421,36 +507,44 @@ export default function Quiz() {
 
       {/* ═══ Main content ═══ */}
       <main className="max-w-3xl mx-auto px-4 py-6">
-        {appState === 'setup' && (
-          <SetupCard quizMode={quizMode} questionCount={questionCount} onStart={startQuiz} />
-        )}
 
-        {appState === 'running' && quizMode === 'biasa' && (
+        {/* ── Mode Biasa ── */}
+        {quizMode === 'biasa' && biasaActive && (
           <BiasaMode
-            questions={activeQuestions}
-            answers={answers}
+            questions={biasaQuestions}
+            answers={biasaAnswers}
             onAnswer={handleAnswerBiasa}
           />
         )}
+        {quizMode === 'biasa' && !biasaActive && (
+          <div style={{ color: '#6e7681', textAlign: 'center', marginTop: '60px', fontSize: '0.88rem' }}>
+            Memuat soal…
+          </div>
+        )}
 
-        {appState === 'running' && quizMode === 'tentamen' && activeQuestions[currentIdx] && (
+        {/* ── Mode Tentamen ── */}
+        {quizMode === 'tentamen' && tentamenState === 'setup' && (
+          <SetupCard questionCount={tentamenQCount} onStart={handleStartTentamen} />
+        )}
+
+        {quizMode === 'tentamen' && tentamenState === 'running' && tentamenQuestions[currentIdx] && (
           <TentamenMode
-            question={activeQuestions[currentIdx]}
+            question={tentamenQuestions[currentIdx]}
             questionNum={currentIdx + 1}
-            total={activeQuestions.length}
+            total={tentamenQuestions.length}
             timeLeft={timeLeft}
             phase={qPhase}
-            answer={answers[currentIdx]}
+            answer={tentamenAnswers[currentIdx]}
             onAnswer={handleAnswerTentamen}
             onNext={goNext}
           />
         )}
 
-        {appState === 'finished' && (
+        {quizMode === 'tentamen' && tentamenState === 'finished' && (
           <TentamenResults
-            questions={activeQuestions}
-            answers={answers}
-            onRestart={resetToSetup}
+            questions={tentamenQuestions}
+            answers={tentamenAnswers}
+            onRestart={handleResetTentamen}
           />
         )}
       </main>
@@ -458,17 +552,13 @@ export default function Quiz() {
   )
 }
 
-// ── SetupCard ──────────────────────────────────────────────────────────────────
+// ── SetupCard (Tentamen only) ──────────────────────────────────────────────────
 
-function SetupCard({ quizMode, questionCount, onStart }: {
-  quizMode: QuizMode
+function SetupCard({ questionCount, onStart }: {
   questionCount: number
   onStart: () => void
 }) {
-  const isTentamen = quizMode === 'tentamen'
-  const est = isTentamen
-    ? `${Math.ceil(questionCount * EXAM_TIMER / 60)} menit`
-    : `~${Math.round(questionCount * 1.5)} menit`
+  const est = `${Math.ceil(questionCount * EXAM_TIMER / 60)} menit`
 
   return (
     <div className="quiz-fade-in">
@@ -482,40 +572,27 @@ function SetupCard({ quizMode, questionCount, onStart }: {
             padding: '10px',
             flexShrink: 0,
           }}>
-            {isTentamen
-              ? <Timer style={{ width: '22px', height: '22px', color: '#e8a838' }} />
-              : <BookOpen style={{ width: '22px', height: '22px', color: '#e8a838' }} />
-            }
+            <Timer style={{ width: '22px', height: '22px', color: '#e8a838' }} />
           </div>
           <div>
             <h2 style={{ color: '#f0f6fc', fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>
-              {isTentamen ? 'Mode Tentamen' : 'Mode Biasa'}
+              Mode Tentamen
             </h2>
             <p style={{ color: '#8b949e', fontSize: '0.8rem', marginTop: '4px' }}>
-              {isTentamen
-                ? 'Simulasi ujian dengan timer 30 detik per soal'
-                : 'Semua soal tersedia, bisa dijawab dengan santai'}
+              Simulasi ujian dengan timer 30 detik per soal
             </p>
           </div>
         </div>
 
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-          {(isTentamen ? [
+          {[
             'Satu soal per layar dengan timer 30 detik',
             'Waktu habis → otomatis lanjut ke soal berikutnya',
             'Setelah menjawab: lihat jawaban benar + penjelasan',
             'Hasil lengkap di akhir: skor, benar, salah, terlewati',
-          ] : [
-            'Semua soal ditampilkan sekaligus dan bisa di-scroll',
-            'Langsung lihat jawaban benar/salah setelah memilih',
-            'Penjelasan muncul di bawah setiap soal',
-            'Skor real-time terlihat di header',
-          ]).map((item, i) => (
+          ].map((item, i) => (
             <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.82rem', color: '#c9d1d9' }}>
-              {isTentamen
-                ? <Zap style={{ width: '14px', height: '14px', color: '#e8a838', flexShrink: 0, marginTop: '1px' }} />
-                : <CheckCircle style={{ width: '14px', height: '14px', color: '#4ade80', flexShrink: 0, marginTop: '1px' }} />
-              }
+              <Zap style={{ width: '14px', height: '14px', color: '#e8a838', flexShrink: 0, marginTop: '1px' }} />
               {item}
             </li>
           ))}
@@ -569,7 +646,7 @@ function SetupCard({ quizMode, questionCount, onStart }: {
         onMouseUp={e => { (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)' }}
       >
         <Play style={{ width: '18px', height: '18px' }} />
-        {isTentamen ? 'Mulai Tentamen' : 'Mulai Mode Biasa'}
+        Mulai Tentamen
       </button>
     </div>
   )
@@ -939,7 +1016,7 @@ function TentamenResults({ questions, answers, onRestart }: {
         onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.opacity = '1' }}
       >
         <RotateCcw style={{ width: '17px', height: '17px' }} />
-        Ulangi / Ganti Mode
+        Ulangi Tentamen
       </button>
     </div>
   )
