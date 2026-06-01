@@ -53,8 +53,10 @@ function shuffleArray<T>(arr: T[]): T[] {
 // ── LocalStorage (Mode Biasa — persists across refresh & tab close) ────────────
 
 const LS_KEY = 'quiz_biasa_progress'
+const LS_VERSION = 2
 
 interface SavedBiasaState {
+  version: number
   selectedCategory: string
   shuffleOn: boolean
   activeQuestions: Question[]
@@ -64,15 +66,18 @@ interface SavedBiasaState {
 function loadBiasa(): SavedBiasaState | null {
   try {
     const raw = localStorage.getItem(LS_KEY)
-    return raw ? (JSON.parse(raw) as SavedBiasaState) : null
+    if (!raw) return null
+    const parsed = JSON.parse(raw) as SavedBiasaState
+    if (parsed.version !== LS_VERSION) return null
+    return parsed
   } catch {
     return null
   }
 }
 
-function saveBiasa(state: SavedBiasaState) {
+function saveBiasa(state: Omit<SavedBiasaState, 'version'>) {
   try {
-    localStorage.setItem(LS_KEY, JSON.stringify(state))
+    localStorage.setItem(LS_KEY, JSON.stringify({ version: LS_VERSION, ...state }))
   } catch { /* quota exceeded — silently ignore */ }
 }
 
