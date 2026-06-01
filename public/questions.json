@@ -1,0 +1,1742 @@
+[
+  {
+    "id": "1",
+    "question": "Mekanisme kerja obat pada sistem inkretin adalah...",
+    "options": [
+      "Menghambat reabsorbsi glukosa di tubulus ginjal",
+      "Meningkatkan sekresi insulin yang bergantung glukosa dan menghambat sekresi glukagon",
+      "Merangsang sekresi insulin secara konstan tanpa bergantung kadar glukosa",
+      "Menghambat enzim alfa-glukosidase di usus halus",
+      "Meningkatkan sensitivitas insulin di jaringan perifer"
+    ],
+    "correct": 1,
+    "explanation": "Obat inkretin (GLP-1 RA, DPP-4 inhibitor) bekerja dengan meningkatkan sekresi insulin secara glukosa-dependen dan menghambat glukagon. Pilihan lain: B=SGLT2i, C=Thiazolidindion, D=Acarbose, E=Sulfonilurea.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "2",
+    "question": "Kebutuhan kalori dewasa menurut AKG 2019 adalah...",
+    "options": [
+      "2400 kkal",
+      "2300 kkal",
+      "2100 kkal",
+      "2500 kkal",
+      "2200 kkal"
+    ],
+    "correct": 1,
+    "explanation": "AKG 2019 menetapkan kebutuhan kalori dewasa sebesar 2300 kkal/hari.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "3",
+    "question": "Makanan berikut yang mengandung trans fatty acid adalah...",
+    "options": [
+      "Minyak terhidrogenasi / margarin",
+      "Sosis",
+      "Alpukat",
+      "Kacang-kacangan",
+      "Putih telur"
+    ],
+    "correct": 0,
+    "explanation": "Minyak terhidrogenasi/margarin merupakan sumber utama trans fatty acid akibat proses hidrogenasi parsial.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "4",
+    "question": "Pasien datang untuk kontrol DM tipe II. Sedang mengonsumsi 1 obat DM dan sudah mengalami penurunan HbA1c dari 8% (3 bulan lalu) menjadi 7%, namun belum memenuhi target, sehingga akan diberikan insulin. Apakah prinsip dasar pemberian insulin yang tepat?",
+    "options": [
+      "Dosis ditentukan berdasarkan berat badan tanpa titrasi",
+      "Dimulai dengan insulin basal dosis rendah kemudian dititrasi secara bertahap",
+      "Diberikan insulin prandial saja tanpa insulin basal",
+      "Langsung diberikan dosis maksimal di awal lalu pelan-pelan diturunkan",
+      "Mengganti semua obat oral dengan insulin sepenuhnya"
+    ],
+    "correct": 1,
+    "explanation": "Prinsip insulin dimulai dari dosis rendah basal (biasanya 10 unit/hari) lalu dititrasi bertahap berdasarkan gula darah puasa.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "5",
+    "question": "Mengapa demam pada lansia bukan merupakan tanda pasti terjadinya infeksi?",
+    "options": [
+      "Seluruh penyakit pada lansia selalu disertai respons demam",
+      "Suhu tubuh basal lansia cenderung lebih rendah dari dewasa muda sehingga respons demam terhadap infeksi berkurang",
+      "Demam pada lansia selalu disebabkan oleh keganasan, bukan infeksi",
+      "Infeksi pada lansia tidak pernah menyebabkan demam sama sekali",
+      "Lansia tidak memiliki sistem imun yang dapat merespons infeksi"
+    ],
+    "correct": 1,
+    "explanation": "Pada lansia, suhu basal lebih rendah sehingga meski ada infeksi, suhu mungkin tidak mencapai batas demam konvensional (blunted fever response).",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "6",
+    "question": "Perubahan sistem imunologi adaptif pada lansia yang paling benar adalah...",
+    "options": [
+      "Produksi limfosit baru menurun, naive cell meningkat, memori cell menurun",
+      "Produksi limfosit baru menurun, naive cell berkurang, memori cell meningkat, dan kadar IL-6 meningkat",
+      "Produksi limfosit baru meningkat",
+      "Produksi antibodi meningkat pada lansia",
+      "Fungsi sel T helper meningkat secara signifikan"
+    ],
+    "correct": 1,
+    "explanation": "Imunosenesen: produksi limfosit baru dari timus berkurang, naive cell berkurang, memori cell meningkat, dan terjadi inflammaging dengan peningkatan IL-6.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "7",
+    "question": "Obat yang termasuk dalam kriteria Beers List (obat berpotensi tidak aman untuk lansia) adalah...",
+    "options": [
+      "Metformin",
+      "Amoksisilin",
+      "Benzodiazepine",
+      "Omeprazol",
+      "Parasetamol"
+    ],
+    "correct": 2,
+    "explanation": "Benzodiazepine masuk Beers List karena meningkatkan risiko jatuh, delirium, dan ketergantungan pada lansia.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "8",
+    "question": "Obat dislipidemia yang bekerja sebagai antibodi monoklonal adalah...",
+    "options": [
+      "Simvastatin",
+      "Gemfibrozil",
+      "Ezetimibe",
+      "Alirocumab",
+      "Niacin"
+    ],
+    "correct": 3,
+    "explanation": "Alirocumab adalah antibodi monoklonal anti-PCSK9 yang mencegah degradasi reseptor LDL sehingga LDL turun drastis.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "9",
+    "question": "Kebutuhan cairan harian yang direkomendasikan untuk lansia adalah...",
+    "options": [
+      "4 gelas (~1000 mL)",
+      "6 gelas (~1500 mL)",
+      "8 gelas (~2000 mL)",
+      "2 gelas (~500 mL)",
+      "10 gelas (~2500 mL)"
+    ],
+    "correct": 2,
+    "explanation": "Rekomendasi cairan untuk lansia adalah ~8 gelas atau 2000 mL/hari.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "10",
+    "question": "Berdasarkan skor MNA (Mini Nutritional Assessment), skor yang menunjukkan risiko malnutrisi pada lansia adalah...",
+    "options": [
+      "15-18 (normal)",
+      "19-23 (baik)",
+      "8-11 (risiko malnutrisi)",
+      "0-7 (malnutrisi)",
+      "12-14 (normal bawah)"
+    ],
+    "correct": 2,
+    "explanation": "MNA scoring: 0-7=malnutrisi, 8-11=risiko malnutrisi, 12-14=normal.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "11",
+    "question": "Obat berikut yang dapat menggeser ikatan protein sehingga meningkatkan efek toksik obat lain adalah...",
+    "options": [
+      "Fenilbutazon",
+      "Tolbutamide",
+      "Warfarin",
+      "Phenytoin",
+      "Methotrexate"
+    ],
+    "correct": 0,
+    "explanation": "Fenilbutazon adalah NSAID kuat yang menggantikan obat lain dari ikatan protein plasma (protein displacement), meningkatkan kadar bebas obat lain sehingga toksik.",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "12",
+    "question": "Cara pemeriksaan malnutrisi pada lansia yang paling tepat menggunakan...",
+    "options": [
+      "PT/APTT",
+      "Kadar leptin",
+      "Kadar ghrelin",
+      "MNA",
+      "Albumin serum"
+    ],
+    "correct": 3,
+    "explanation": "MNA (Mini Nutritional Assessment) adalah instrumen skrining dan penilaian malnutrisi yang tervalidasi khusus untuk lansia.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "13",
+    "question": "Instrumen yang digunakan untuk skrining malnutrisi secara umum (universal) adalah...",
+    "options": [
+      "DASH",
+      "STOPP",
+      "TPA/TTP",
+      "MUST",
+      "START"
+    ],
+    "correct": 3,
+    "explanation": "MUST (Malnutrition Universal Screening Tool) adalah alat skrining malnutrisi universal yang berlaku di berbagai setting.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "14",
+    "question": "Obat dislipidemia yang bekerja mengaktivasi enzim lipase adalah...",
+    "options": [
+      "Alirocumab",
+      "Simvastatin",
+      "Ezetimibe",
+      "Niacin",
+      "Gemfibrozil"
+    ],
+    "correct": 4,
+    "explanation": "Gemfibrozil (fibrat) mengaktivasi PPAR-alpha yang meningkatkan ekspresi lipoprotein lipase (LPL), sehingga trigliserida dipecah dan HDL meningkat.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "15",
+    "question": "Ciri khas hipotiroid adalah...",
+    "options": [
+      "Konstipasi",
+      "Berat badan menurun",
+      "Tidak tahan panas",
+      "Keringat berlebih",
+      "Takikardi"
+    ],
+    "correct": 0,
+    "explanation": "Hipotiroid ditandai: konstipasi, berat badan naik, bradikardia, tidak tahan dingin, kulit kering. Pilihan A,B,C,D adalah gejala hipertiroid.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "16",
+    "question": "Obat yang diindikasikan untuk demensia sedang-berat adalah...",
+    "options": [
+      "Galantamine",
+      "Donepezil",
+      "Rivastigmin",
+      "Tacrine",
+      "Memantine"
+    ],
+    "correct": 4,
+    "explanation": "Memantine (antagonis NMDA) diindikasikan untuk demensia sedang-berat. Galantamine, Donepezil, Rivastigmin adalah kolinesterase inhibitor untuk demensia ringan-sedang.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "17",
+    "question": "Berikut ini yang merupakan komplikasi kronik diabetes, KECUALI...",
+    "options": [
+      "Neuropati diabetik",
+      "Ketoasidosis Diabetik (KAD)",
+      "Nefropati diabetik",
+      "Retinopati diabetik",
+      "Stroke"
+    ],
+    "correct": 1,
+    "explanation": "KAD adalah komplikasi AKUT diabetes (bukan kronik). Komplikasi kronik DM meliputi nefropati, retinopati, neuropati, stroke.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "18",
+    "question": "Berikut yang BUKAN merupakan tatalaksana untuk neuropati diabetikum adalah...",
+    "options": [
+      "Pantau ketat glikemik",
+      "Antidepresan trisiklik",
+      "NSAID",
+      "Antipiretik",
+      "Antikonvulsan"
+    ],
+    "correct": 3,
+    "explanation": "Antipiretik (parasetamol/ibuprofen untuk demam) bukan terapi neuropati diabetikum. Yang tepat: antidepresan trisiklik, antikonvulsan, NSAID, kontrol glikemik ketat.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "20",
+    "question": "Pemeriksaan radiologi terbaik untuk mendeteksi White Matter Hyperintensity (WMH) pada pencitraan otak adalah...",
+    "options": [
+      "MRI T1 FLAIR",
+      "MRI T1 SE",
+      "CT-Scan",
+      "MRI T2 SE",
+      "MRI T2 FLAIR"
+    ],
+    "correct": 4,
+    "explanation": "MRI T2 FLAIR adalah modalitas terbaik untuk WMH karena sinyal CSF disupresi sehingga lesi white matter hyperintense terlihat jelas.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "22",
+    "question": "Kebutuhan protein pada lansia yang direkomendasikan adalah...",
+    "options": [
+      "15 gr/kgBB/hari",
+      "0,2 gr/kgBB/hari",
+      "1,0-1,2 gr/kgBB/hari",
+      "10 gr/kgBB/hari",
+      "0,5 gr/kgBB/hari"
+    ],
+    "correct": 2,
+    "explanation": "Lansia membutuhkan protein 1,0-1,2 g/kgBB/hari untuk mencegah sarcopenia.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "23",
+    "question": "Kecelakaan yang terjadi di area berikut TIDAK dijamin oleh jaminan ketenagakerjaan adalah...",
+    "options": [
+      "Wilayah di luar route tempat tinggal - tempat kerja",
+      "Route berangkat kerja",
+      "Route pulang kerja",
+      "Wilayah kerja produksi",
+      "Wilayah perkantoran manajer"
+    ],
+    "correct": 0,
+    "explanation": "Jaminan ketenagakerjaan menanggung kecelakaan saat perjalanan PP rumah-tempat kerja (route langsung), di area kerja. Kecelakaan di luar route tidak ditanggung.",
+    "category": "Kedokteran Kerja",
+    "img": null
+  },
+  {
+    "id": "24",
+    "question": "Jumlah serat yang dibutuhkan penderita DM per hari adalah...",
+    "options": [
+      "20 gram",
+      "30 gram",
+      "25 gram",
+      "35 gram",
+      "10 gram"
+    ],
+    "correct": 1,
+    "explanation": "ADA merekomendasikan asupan serat 30-35 gram/hari untuk penderita DM.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "25",
+    "question": "Lokasi patah tulang yang paling sering terjadi pada lansia yang jatuh adalah...",
+    "options": [
+      "Radius-ulna",
+      "Klavikula",
+      "Elbow",
+      "Collum femoris",
+      "Collum humerus"
+    ],
+    "correct": 3,
+    "explanation": "Fraktur collum femoris (hip fracture) adalah komplikasi jatuh paling serius dan sering pada lansia, terutama wanita dengan osteoporosis.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "26",
+    "question": "Jenis karbohidrat dengan indeks glikemik tinggi adalah...",
+    "options": [
+      "Oat",
+      "Ubi jalar",
+      "Jagung",
+      "Nasi putih",
+      "Nasi merah"
+    ],
+    "correct": 3,
+    "explanation": "Nasi putih memiliki indeks glikemik tinggi (~70-72) karena dicerna cepat.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "27",
+    "question": "Prinsip pemberian insulin prandial yang benar adalah...",
+    "options": [
+      "Diberikan bersamaan dengan insulin basal dalam satu suntikan",
+      "Diberikan 30-60 menit sebelum makan untuk insulin reguler, atau segera sebelum makan untuk analog insulin",
+      "Diberikan sekali sehari saat tidur malam",
+      "Diberikan dosis tetap tanpa mempertimbangkan asupan karbohidrat",
+      "Dosis langsung maksimal tanpa titrasi"
+    ],
+    "correct": 1,
+    "explanation": "Insulin reguler diberikan 30-60 menit sebelum makan. Analog insulin diberikan segera sebelum atau setelah makan karena onset cepat.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "28",
+    "question": "Efek samping obat antidiabetes yang membuat pasien banyak kencing (poliuria) adalah...",
+    "options": [
+      "Metformin",
+      "Sulfonilurea",
+      "Pioglitazone",
+      "SGLT-2 inhibitor (misalnya empagliflozin)",
+      "Acarbose"
+    ],
+    "correct": 3,
+    "explanation": "SGLT-2 inhibitor bekerja dengan menghambat reabsorbsi glukosa di ginjal, menyebabkan glikosuria dan diuresis osmotik (poliuria).",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "29",
+    "question": "Mekanisme kerja obat Ezetimibe adalah...",
+    "options": [
+      "Menghambat PCSK9",
+      "Mengaktivasi enzim lipase",
+      "Meningkatkan ekskresi asam empedu",
+      "Menghambat absorpsi kolesterol di usus halus (inhibisi NPC1L1)",
+      "Menghambat HMG-CoA reduktase"
+    ],
+    "correct": 3,
+    "explanation": "Ezetimibe menghambat transporter NPC1L1 di brush border usus halus, sehingga absorpsi kolesterol dari lumen usus berkurang ~50%.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "30",
+    "question": "Mekanisme kerja utama obat golongan asam fibrat adalah...",
+    "options": [
+      "Mengaktivasi enzim lipoprotein lipase (LPL) melalui aktivasi PPAR-alfa",
+      "Menghambat HMG-CoA reduktase",
+      "Menghambat absorpsi kolesterol di usus",
+      "Meningkatkan ekskresi asam empedu",
+      "Menghambat PCSK9"
+    ],
+    "correct": 0,
+    "explanation": "Fibrat (gemfibrozil, fenofibrat) mengaktivasi PPAR-alpha, meningkatkan transkripsi LPL sehingga trigliserida dipecah dan HDL meningkat.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "31",
+    "question": "Obat statin yang dapat menurunkan LDL lebih dari 50% berdasarkan guideline ACC/AHA adalah...",
+    "options": [
+      "Simvastatin 10 mg",
+      "Lovastatin 40 mg",
+      "Atorvastatin 40-80 mg",
+      "Pravastatin 20 mg",
+      "Pitavastatin 20 mg"
+    ],
+    "correct": 2,
+    "explanation": "ACC/AHA mengklasifikasikan 'high-intensity statin' sebagai yang menurunkan LDL >=50%: Atorvastatin 40-80 mg dan Rosuvastatin 20-40 mg.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "32",
+    "question": "Pemeriksaan radiologi yang paling baik untuk mengevaluasi lesi serebrovaskular adalah...",
+    "options": [
+      "MRI T2 FLAIR",
+      "MRI T2 SE",
+      "MRI T1 FLAIR",
+      "CT-Scan",
+      "MRI T1 SE"
+    ],
+    "correct": 0,
+    "explanation": "MRI T2 FLAIR terbaik untuk lesi serebrovaskular (WMH, infark lacunar) karena cairan CSF disupresi sehingga lesi hiperintens terlihat jelas.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "33",
+    "question": "Pola hidup yang berpengaruh besar terhadap risiko penyakit metabolik adalah...",
+    "options": [
+      "Diet, merokok, olahraga, umur",
+      "Diet, merokok, olahraga, manajemen stres dan lingkungan sosial",
+      "Diet, olahraga, umur, jenis kelamin",
+      "Diet, merokok, olahraga, obesitas",
+      "Diet, olahraga, dan faktor genetik"
+    ],
+    "correct": 1,
+    "explanation": "Faktor gaya hidup yang dapat dimodifikasi meliputi diet, merokok, olahraga, manajemen stres, dan lingkungan sosial. Umur dan jenis kelamin adalah faktor non-modifiable.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "34",
+    "question": "Seorang ibu datang dengan keluhan tiba-tiba buang air kecil saat tertawa dan batuk. Urin juga keluar saat melakukan posisi jongkok. Jenis inkontinensia apakah yang dialami?",
+    "options": [
+      "Inkontinensia campuran",
+      "Inkontinensia urgensi",
+      "Inkontinensia stres",
+      "Inkontinensia fungsional",
+      "Inkontinensia luapan (overflow)"
+    ],
+    "correct": 2,
+    "explanation": "Inkontinensia stres terjadi akibat peningkatan tekanan intraabdominal (batuk, bersin, tertawa, jongkok) yang melebihi resistensi uretra.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "35",
+    "question": "Tanda klinis hipotiroid kongenital pada bayi yang tidak mendapatkan penanganan yang tepat adalah...",
+    "options": [
+      "Berat badan turun drastis, diare kronik, eksoftalmus",
+      "Pertumbuhan normal, hiperrefleks, hernia umbilikus",
+      "Pubertas dini, pertumbuhan cepat, tremor",
+      "Peningkatan berat badan, takikardi, kulit lembap",
+      "Penurunan kognitif (kretinisme), konstipasi, ikterus berkepanjangan, hernia umbilikus"
+    ],
+    "correct": 4,
+    "explanation": "Hipotiroid kongenital tanpa penanganan menyebabkan kretinisme: retardasi mental, pertumbuhan terlambat, konstipasi, ikterus berkepanjangan, hipotonia, hernia umbilikus.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "37",
+    "question": "Bentuk aktif vitamin D yang digunakan dalam metabolisme kalsium adalah...",
+    "options": [
+      "Kalsitriol (1,25-dihidroksikolekalsiferol)",
+      "Kolekalsiferol (D3)",
+      "Kalsidiol (25-hidroksikolekalsiferol)",
+      "Ergokalsiferol (D2)",
+      "Provitamin D"
+    ],
+    "correct": 0,
+    "explanation": "Kalsitriol (1,25-dihidroksikolekalsiferol) adalah bentuk aktif vitamin D yang dibentuk di ginjal oleh enzim 1-alfa hidroksilase.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "39",
+    "question": "Obat yang diberikan pada pasien neuropati diabetik, KECUALI...",
+    "options": [
+      "Antidepresan trisiklik",
+      "Antikonvulsan",
+      "NSAID",
+      "Pemantauan ketat glikemik",
+      "Antipiretik"
+    ],
+    "correct": 4,
+    "explanation": "Antipiretik (penurun demam) bukan terapi neuropati diabetik. Yang tepat: NSAID, antidepresan trisiklik (amitriptilin), antikonvulsan (pregabalin/gabapentin), kontrol glikemik ketat.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "40",
+    "question": "Rumus yang digunakan untuk menghitung berat badan ideal adalah...",
+    "options": [
+      "Slovin",
+      "Lemeshow",
+      "Rumus Broca",
+      "Harris-Benedict",
+      "Mifflin-St Jeor"
+    ],
+    "correct": 2,
+    "explanation": "Rumus Broca digunakan untuk menghitung berat badan ideal: BB ideal = (TB - 100) - 10% (TB - 100) untuk pria.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "41",
+    "question": "Faktor risiko diabetes tipe 2, KECUALI...",
+    "options": [
+      "Riwayat melahirkan bayi dengan berat badan > 4 kg",
+      "Riwayat toleransi glukosa terganggu (IGT)",
+      "Hipertensi",
+      "Trigliserida < 250 mg/dL",
+      "HDL kolesterol <= 35 mg/dL"
+    ],
+    "correct": 3,
+    "explanation": "Trigliserida <250 mg/dL bukan faktor risiko DM tipe 2 - justru trigliserida TINGGI (>250 mg/dL) yang menjadi faktor risiko.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "42",
+    "question": "Mana yang merupakan vitamin D bentuk aktif?",
+    "options": [
+      "Kalsidiol",
+      "7-dehidrokolesterol",
+      "Ergokalsiferol",
+      "Kolekalsiferol",
+      "Kalsitriol"
+    ],
+    "correct": 4,
+    "explanation": "Kalsitriol (1,25(OH)2D3) adalah bentuk aktif vitamin D.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "43",
+    "question": "Interaksi genetik dengan gaya hidup paling tepat digambarkan oleh kasus berikut...",
+    "options": [
+      "Perempuan Singapura keturunan India mempunyai risiko kanker payudara lebih tinggi daripada perempuan Singapura keturunan Melayu",
+      "Perempuan Inggris mempunyai risiko kanker payudara lebih tinggi daripada perempuan India",
+      "Laki-laki Indonesia perokok mempunyai risiko lebih tinggi terkena kanker paru daripada yang tidak merokok",
+      "Perempuan Amerika tahun 2000-an lebih gemuk dibandingkan perempuan Amerika tahun 1950-an",
+      "Perempuan India yang tinggal di Inggris mempunyai risiko kanker payudara lebih tinggi daripada perempuan India yang tinggal di negaranya sendiri"
+    ],
+    "correct": 4,
+    "explanation": "Perempuan India di Inggris memiliki risiko kanker payudara lebih tinggi dari yang di India sendiri - genetik sama, tapi gaya hidup berbeda. Ini menunjukkan interaksi gen-lingkungan/gaya hidup.",
+    "category": "Kedokteran Kerja",
+    "img": null
+  },
+  {
+    "id": "44",
+    "question": "Prinsip pemberian insulin yang benar adalah...",
+    "options": [
+      "Kombinasi insulin basal dan prandial sesuai kebutuhan pasien",
+      "Dosis disesuaikan dengan berat badan tanpa titrasi bertahap",
+      "Hanya diberikan insulin prandial tanpa insulin basal",
+      "Insulin selalu diberikan bersamaan dengan obat oral dosis penuh",
+      "Langsung diberikan dosis maksimal di awal lalu pelan-pelan diturunkan"
+    ],
+    "correct": 0,
+    "explanation": "Prinsip insulin yang benar adalah kombinasi basal-prandial sesuai kebutuhan pasien, dimulai dosis rendah dan dititrasi.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "45",
+    "question": "Faktor risiko DM tipe 2 meliputi...",
+    "options": [
+      "Riwayat melahirkan bayi > 4 kg, hipertensi, dislipidemia",
+      "Pola tidur baik, stres rendah, konsumsi serat tinggi",
+      "Konsumsi sayur tinggi, olahraga rutin, tidak merokok",
+      "Usia muda, IMT rendah, aktivitas fisik tinggi",
+      "Riwayat infeksi virus, gangguan autoimun, defisiensi zinc"
+    ],
+    "correct": 0,
+    "explanation": "Faktor risiko DM tipe 2: riwayat melahirkan bayi >4kg, hipertensi, dislipidemia, obesitas, usia >45, riwayat keluarga.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "46",
+    "question": "Definisi yang benar mengenai homeostasis dan homeostenosis adalah...",
+    "options": [
+      "Keduanya adalah proses yang sama namun berbeda terminologi",
+      "Homeostasis adalah penyempitan kemampuan adaptasi tubuh; homeostenosis adalah kemampuan mempertahankan keseimbangan internal",
+      "Homeostasis adalah kemampuan tubuh mempertahankan keseimbangan internal; homeostenosis adalah penyempitan kapasitas cadangan fisiologis akibat penuaan",
+      "Keduanya merujuk pada proses degenerasi sel yang normal",
+      "Homeostasis hanya berlaku pada sistem endokrin; homeostenosis hanya pada sistem kardiovaskular"
+    ],
+    "correct": 2,
+    "explanation": "Homeostasis = kemampuan mempertahankan keseimbangan fisiologis internal. Homeostenosis = penyempitan kapasitas cadangan fisiologis akibat aging.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "47",
+    "question": "Jika pasien DM tipe 2 sudah diberikan 3 obat kombinasi selama 3 bulan dan HbA1c belum mencapai target, tatalaksana selanjutnya adalah...",
+    "options": [
+      "Menurunkan target HbA1c",
+      "Memulai terapi insulin",
+      "Menghentikan semua obat dan menggantinya dengan diet ketat",
+      "Menambahkan obat oral keempat",
+      "Menambahkan suplemen herbal"
+    ],
+    "correct": 1,
+    "explanation": "Algoritma PERKENI/ADA: bila kombinasi 3 OAD gagal mencapai target, langkah selanjutnya adalah memulai terapi insulin (biasanya insulin basal).",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "48",
+    "question": "Penyebab penurunan berat badan tanpa disengaja (unintentional weight loss) pada lansia adalah...",
+    "options": [
+      "Hepatitis",
+      "Hipertensi",
+      "Hipokondriasis",
+      "Uretritis",
+      "Keganasan, depresi, malnutrisi, atau penyakit kronik"
+    ],
+    "correct": 4,
+    "explanation": "Unintentional weight loss pada lansia paling sering disebabkan '9D': Dementia, Depression, Dentition, Dysphagia, Diarrhea, Disease kronik/keganasan, Drugs, Dysfunction sosial, Dysgeusia.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "49",
+    "question": "Tingkat risiko kerja dan gaji bulanan menentukan...",
+    "options": [
+      "Besaran THR karyawan",
+      "Golongan jabatan karyawan",
+      "Premi jaminan ketenagakerjaan",
+      "Status kepesertaan BPJS",
+      "Premi jaminan kesehatan"
+    ],
+    "correct": 2,
+    "explanation": "Premi BPJS Ketenagakerjaan (Jaminan Kecelakaan Kerja) ditentukan oleh tingkat risiko pekerjaan (0,24%-1,74% dari gaji) dan gaji sebagai dasar perhitungan.",
+    "category": "Kedokteran Kerja",
+    "img": null
+  },
+  {
+    "id": "50",
+    "question": "Mekanisme kerja utama Ezetimibe adalah...",
+    "options": [
+      "Menghambat LPL (lipoprotein lipase)",
+      "Meningkatkan ekskresi asam empedu",
+      "Menghambat HMG-CoA reduktase",
+      "Mengurangi clearance Apo A-I di hepatosit",
+      "Menghambat penyerapan kolesterol di brush border usus halus (NPC1L1)"
+    ],
+    "correct": 4,
+    "explanation": "Ezetimibe menghambat NPC1L1 di brush border usus halus, mengurangi absorpsi kolesterol dietal dan kolesterol bilier ~50%.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "51",
+    "question": "Mekanisme kerja utama asam fibrat adalah...",
+    "options": [
+      "Meningkatkan ekskresi asam empedu",
+      "Mengurangi clearance Apo A-I di hepatosit melalui aktivasi PPAR-alfa",
+      "Menghambat HMG-CoA reduktase",
+      "Menghambat lipase pankreas",
+      "Menghambat LPL"
+    ],
+    "correct": 1,
+    "explanation": "Fibrat mengaktivasi PPAR-alpha, yang mengurangi clearance apolipoprotein A-I (sehingga HDL meningkat) dan meningkatkan LPL (sehingga TG menurun).",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "52",
+    "question": "Mekanisme utama niacin dalam meningkatkan kadar HDL adalah...",
+    "options": [
+      "Menghambat LPL",
+      "Menghambat HMG-CoA reduktase",
+      "Menghambat lipase pankreas",
+      "Meningkatkan ekskresi asam empedu",
+      "Mengurangi clearance Apo A-I di hepatosit"
+    ],
+    "correct": 4,
+    "explanation": "Niacin (asam nikotinat) meningkatkan HDL paling efektif dari semua obat lipid dengan mengurangi clearance Apo A-I di hepatosit.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "53",
+    "question": "Tujuan utama rehabilitasi medik pada pasien lansia adalah...",
+    "options": [
+      "Mempercepat proses degenerasi",
+      "Menghindari penggunaan alat bantu",
+      "Menyembuhkan penyakit secara total",
+      "Meningkatkan massa otot secara maksimal",
+      "Mencapai kemandirian fungsional optimal"
+    ],
+    "correct": 4,
+    "explanation": "Tujuan rehabilitasi medik pada lansia adalah memaksimalkan kemandirian fungsional sesuai kemampuan yang ada - bukan menyembuhkan total.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "54",
+    "question": "Porsi makanan sarapan pada penderita DM yang dianjurkan adalah...",
+    "options": [
+      "40%",
+      "30%",
+      "20%",
+      "50%",
+      "25%"
+    ],
+    "correct": 1,
+    "explanation": "Distribusi kalori harian untuk DM: sarapan 25-30%, makan siang 30-35%, makan malam 25-30%, snack 10-15%.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "55",
+    "question": "Penyebab unintentional weight loss pada lansia yang paling tepat dari pilihan berikut adalah...",
+    "options": [
+      "Uretritis",
+      "Hipokondriasis",
+      "Hipertensi",
+      "Depresi dan keganasan",
+      "Hepatitis"
+    ],
+    "correct": 3,
+    "explanation": "Depresi dan keganasan adalah dua penyebab tersering unintentional weight loss pada lansia.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "56",
+    "question": "IMT (Indeks Massa Tubuh) skor 20 menurut Kemenkes termasuk dalam golongan...",
+    "options": [
+      "Obese",
+      "Normal",
+      "Gemuk/overweight",
+      "Kurus tingkat berat",
+      "Kurus tingkat ringan"
+    ],
+    "correct": 1,
+    "explanation": "Klasifikasi IMT Kemenkes RI: <17=kurus berat, 17-18,4=kurus ringan, 18,5-25=normal, 25-27=overweight, >27=obese. IMT 20 termasuk normal.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "57",
+    "question": "Penyebab hiperparatiroidisme sekunder adalah...",
+    "options": [
+      "Gagal ginjal kronis (hipokalsemia dan defisiensi vitamin D)",
+      "Tiroiditis Hashimoto",
+      "Kalium dan natrium berlebih",
+      "Litium dan natrium berlebih",
+      "Tumor paratiroid primer"
+    ],
+    "correct": 0,
+    "explanation": "Hiperparatiroid sekunder disebabkan hipokalsemia kronik yang merangsang kelenjar paratiroid secara berlebihan. Penyebab tersering: gagal ginjal kronik.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "58",
+    "question": "Penyebab gangguan pencernaan pada lansia adalah...",
+    "options": [
+      "Peningkatan produksi saliva",
+      "Penyerapan nutrisi meningkat",
+      "Gigi tanggal dan masalah gusi menyebabkan kesulitan mengunyah",
+      "Produksi asam lambung meningkat",
+      "Pergerakan usus besar semakin cepat"
+    ],
+    "correct": 2,
+    "explanation": "Masalah gigi dan gusi pada lansia menyebabkan kesulitan mengunyah. Sebaliknya: asam lambung menurun, usus melambat, saliva berkurang.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "59",
+    "question": "Pemanis alternatif tidak berkalori yang aman untuk penderita DM adalah...",
+    "options": [
+      "Xylitol",
+      "Glukosa",
+      "Aspartame",
+      "Sorbitol",
+      "Fruktosa"
+    ],
+    "correct": 2,
+    "explanation": "Aspartame adalah pemanis artifisial tidak berkalori yang aman untuk DM (tidak menaikkan gula darah).",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "60",
+    "question": "Prinsip pemberian insulin bila kadar HbA1c belum turun setelah pemberian obat oral adalah...",
+    "options": [
+      "Hentikan semua obat oral dan berikan insulin dosis tinggi",
+      "Naikkan dosis semua obat oral secara bersamaan",
+      "Tambahkan insulin basal dengan dosis rendah dan titrasi bertahap",
+      "Tunggu 6 bulan lagi sebelum mengganti terapi",
+      "Ganti semua obat oral dengan obat golongan berbeda"
+    ],
+    "correct": 2,
+    "explanation": "Bila OAD gagal, tambahkan insulin basal (glargine/detemir/NPH) dosis rendah (10 U/hari) dan titrasi setiap 2-3 hari berdasarkan GDP.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "61",
+    "question": "Penyakit Cushing (Cushing disease) disebabkan oleh...",
+    "options": [
+      "Konsumsi kortikosteroid jangka panjang",
+      "Tumor hipofisis (adenoma) penghasil ACTH berlebih",
+      "Tumor adrenal penghasil kortisol",
+      "Hiperplasia adrenal bilateral",
+      "Sindrom paraneoplastik"
+    ],
+    "correct": 1,
+    "explanation": "Cushing DISEASE (spesifik) = adenoma hipofisis penghasil ACTH berlebih -> hiperkortisol. Berbeda dengan Cushing SYNDROME yang lebih luas.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "62",
+    "question": "Pemeriksaan MRI untuk kelainan serebrovaskular (cerebrovascular disease) paling baik menggunakan...",
+    "options": [
+      "MRI T2 SE",
+      "MRI T1 SE",
+      "CT-Scan",
+      "MRI T1 FLAIR",
+      "MRI T2 FLAIR"
+    ],
+    "correct": 4,
+    "explanation": "T2 FLAIR adalah pilihan terbaik untuk penyakit serebrovaskular: sinyal CSF disupresi, lesi iskemik/WMH tampak hiperintens jelas.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "63",
+    "question": "Contoh obat dislipidemia yang bekerja mengaktivasi enzim lipoprotein lipase adalah...",
+    "options": [
+      "Simvastatin",
+      "Gemfibrozil",
+      "Alirocumab",
+      "Ezetimibe",
+      "Colestyramine"
+    ],
+    "correct": 1,
+    "explanation": "Gemfibrozil (fibrat) mengaktivasi PPAR-alpha -> meningkatkan LPL -> memecah VLDL dan TG -> TG turun, HDL naik.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "64",
+    "question": "Yang termasuk antibodi monoklonal pada terapi dislipidemia adalah...",
+    "options": [
+      "Gemfibrozil",
+      "Ezetimibe",
+      "Simvastatin",
+      "Alirocumab",
+      "Niacin"
+    ],
+    "correct": 3,
+    "explanation": "Alirocumab (dan evolocumab) adalah antibodi monoklonal anti-PCSK9 yang mencegah degradasi reseptor LDL di hepatosit.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "65",
+    "question": "Penggunaan obat pada pasien lansia perlu mempertimbangkan banyak aspek. Proses evaluasi ini termasuk dalam...",
+    "options": [
+      "Literature review",
+      "Problem-solving precipitation",
+      "Hospital-based precipitation",
+      "Meta-analysis",
+      "Medication review"
+    ],
+    "correct": 4,
+    "explanation": "Medication review adalah proses evaluasi sistematis terhadap regimen obat pasien untuk mengidentifikasi masalah terkait obat (DRP) - sangat penting pada lansia.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "66",
+    "question": "Perubahan farmakodinamik pada lansia yang paling benar adalah...",
+    "options": [
+      "Tidak ada perubahan farmakodinamik pada lansia",
+      "Sensitivitas reseptor terhadap obat meningkat untuk semua jenis obat",
+      "Hanya reseptor di sistem kardiovaskular yang mengalami perubahan",
+      "Perubahan sensitivitas reseptor bervariasi: beberapa meningkat (opioid, benzodiazepin) dan beberapa menurun (beta-agonis)",
+      "Sensitivitas reseptor menurun untuk semua jenis obat"
+    ],
+    "correct": 3,
+    "explanation": "Farmakodinamik berubah secara heterogen pada lansia: sensitivitas MENINGKAT untuk opioid, benzodiazepin; MENURUN untuk beta-agonis.",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "67",
+    "question": "Usia harapan hidup orang Indonesia adalah 73 tahun. Seseorang pada usia 45 tahun mengalami stroke dan meninggal pada usia 62 tahun. Years of Life Lost (YLL) adalah...",
+    "options": [
+      "28 tahun",
+      "11 tahun",
+      "9 tahun",
+      "17 tahun",
+      "21 tahun"
+    ],
+    "correct": 1,
+    "explanation": "YLL = usia harapan hidup - usia kematian = 73 - 62 = 11 tahun. YLL mengukur berapa tahun kehidupan yang hilang akibat kematian prematur.",
+    "category": "Kedokteran Kerja",
+    "img": null
+  },
+  {
+    "id": "68",
+    "question": "Terapi yang diberikan pada demensia meliputi...",
+    "options": [
+      "Terapi farmakologi (kolinesterase inhibitor/memantine) dan terapi okupasi",
+      "Pembedahan otak",
+      "Isolasi sosial untuk mencegah stimulasi berlebih",
+      "Hanya terapi farmakologi",
+      "Hanya fisioterapi"
+    ],
+    "correct": 0,
+    "explanation": "Tatalaksana demensia bersifat komprehensif: farmakologi (kolinesterase inhibitor, memantine) DAN non-farmakologi (terapi okupasi, stimulasi kognitif).",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "69",
+    "question": "Fungsi hormon tiroid pada bayi dan anak-anak adalah...",
+    "options": [
+      "Meningkatkan kadar kalsium darah",
+      "Menghambat produksi insulin",
+      "Meningkatkan resistensi insulin",
+      "Menurunkan laju metabolisme basal",
+      "Mendukung perkembangan sistem saraf, pertumbuhan tinggi badan, dan pembelahan sel"
+    ],
+    "correct": 4,
+    "explanation": "Hormon tiroid esensial untuk perkembangan otak (mielinisasi), pertumbuhan linier, dan pembelahan sel pada anak. Defisiensi pada bayi -> kretinisme.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "70",
+    "question": "Jaminan ketenagakerjaan yang tidak termasuk dalam santunan namun harus disediakan oleh perusahaan adalah...",
+    "options": [
+      "Alat pelindung diri (APD)",
+      "Santunan kecelakaan kerja",
+      "Biaya sekolah anak",
+      "Santunan ketidakmampuan (cacat)",
+      "Santunan kematian"
+    ],
+    "correct": 0,
+    "explanation": "APD (helm, sepatu safety, masker) wajib disediakan perusahaan sebagai bagian K3, bukan sebagai santunan BPJS Ketenagakerjaan.",
+    "category": "Kedokteran Kerja",
+    "img": null
+  },
+  {
+    "id": "71",
+    "question": "Pemberian obat statin menurut ACC/AHA yang dapat menurunkan LDL sekitar 50% adalah...",
+    "options": [
+      "Lovastatin 20 mg",
+      "Fluvastatin 20 mg",
+      "Pravastatin 40 mg",
+      "Atorvastatin 40 mg",
+      "Simvastatin 10 mg"
+    ],
+    "correct": 3,
+    "explanation": "High-intensity statin (menurunkan LDL >=50%): Atorvastatin 40-80 mg dan Rosuvastatin 20-40 mg. Atorvastatin 40 mg masuk kategori ini.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "72",
+    "question": "Pada gambar MRI ditemukan tanda absent swallow tail sign pada substantia nigra. Diagnosis yang paling sesuai adalah...",
+    "options": [
+      "Parkinson",
+      "Demensia vaskular",
+      "Alzheimer",
+      "Tiroiditis Hashimoto",
+      "Graves disease"
+    ],
+    "correct": 0,
+    "explanation": "Absent swallow tail sign pada MRI di substantia nigra pars compacta menunjukkan hilangnya sel dopaminergik - patognomonik untuk Penyakit Parkinson.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "73",
+    "question": "Ciri-ciri delirium yang paling tepat adalah...",
+    "options": [
+      "Onset akut, mood tertekan, tidak ada gangguan kesadaran",
+      "Onset akut, fluktuasi kesadaran, gangguan atensi, disorientasi",
+      "Onset perlahan, perubahan kepribadian, kesadaran baik",
+      "Gangguan gerak dan tremor istirahat, kesadaran penuh",
+      "Onset perlahan, gangguan memori jangka panjang dominan, kesadaran normal"
+    ],
+    "correct": 1,
+    "explanation": "Delirium: onset AKUT (jam-hari), fluktuasi kesadaran sepanjang hari, gangguan atensi menonjol, disorientasi, sering reversibel.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "74",
+    "question": "Penyebab pubertas prekoks yang paling benar adalah...",
+    "options": [
+      "Defisiensi somatotropin (GH)",
+      "Defisiensi hormon tiroid",
+      "Kelebihan TSH",
+      "Kelebihan GH",
+      "Aktivasi prematur aksis hipotalamus-hipofisis-gonad (GnRH pusat)"
+    ],
+    "correct": 4,
+    "explanation": "Pubertas prekoks sentral disebabkan aktivasi prematur aksis HPG -> GnRH meningkat -> LH/FSH meningkat -> gonad aktif sebelum waktunya.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "75",
+    "question": "Mengapa pada sindrom metabolik kadar HDL cenderung menurun?",
+    "options": [
+      "Peningkatan sintesis HDL di hati",
+      "Resistensi insulin meningkatkan aktivitas CETP sehingga HDL lebih cepat terdegradasi dan kadar trigliserida tinggi menghambat pembentukan HDL",
+      "Peningkatan absorpsi kolesterol di usus",
+      "Obat antihipertensi menghambat sintesis HDL",
+      "Kadar trigliserida menurun sehingga HDL tidak terbentuk"
+    ],
+    "correct": 1,
+    "explanation": "Pada sindrom metabolik: resistensi insulin -> hipertrigliseridemia -> CETP aktif -> HDL terdegradasi lebih cepat -> HDL rendah.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "76",
+    "question": "Kondisi penyakit tiroid yang bersifat autoimun mencakup...",
+    "options": [
+      "Adenoma tiroid",
+      "Tiroiditis Hashimoto dan Graves disease",
+      "Karsinoma tiroid papiler",
+      "Cushing syndrome",
+      "Kista tiroid"
+    ],
+    "correct": 1,
+    "explanation": "Penyakit tiroid autoimun: Tiroiditis Hashimoto (anti-TPO -> hipotiroid) dan Graves disease (TSI/TSAb -> hipertiroid).",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "77",
+    "question": "Obat untuk demensia yang bekerja sebagai antagonis reseptor NMDA (glutamat) adalah...",
+    "options": [
+      "Rivastigmin",
+      "Galantamine",
+      "Tacrine",
+      "Memantine",
+      "Donepezil"
+    ],
+    "correct": 3,
+    "explanation": "Memantine adalah antagonis reseptor NMDA yang mengurangi eksitotoksisitas glutamat. Indikasi: demensia sedang-berat.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "78",
+    "question": "Pasien mudah lupa dan menunjukkan perilaku impulsif serta disinhibisi sosial. Jenis demensia yang paling sesuai adalah...",
+    "options": [
+      "Demensia frontotemporal",
+      "Demensia Lewy body",
+      "Demensia Alzheimer",
+      "Demensia Parkinson",
+      "Demensia vaskular"
+    ],
+    "correct": 0,
+    "explanation": "Demensia frontotemporal (FTD/Pick disease): ciri khas adalah perubahan perilaku (disinhibisi, impulsivitas, apati) dan gangguan bahasa, sedangkan memori relatif terjaga di awal.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "79",
+    "question": "Pasien yang sangat khawatir akan kematiannya, gelisah, dan cemas berlebihan pasca istrinya meninggal kemungkinan besar mengalami...",
+    "options": [
+      "Alzheimer",
+      "Depresi",
+      "Delirium",
+      "Gangguan kecemasan (anxiety disorder)",
+      "Parkinson"
+    ],
+    "correct": 3,
+    "explanation": "Gejala berupa kekhawatiran berlebihan, gelisah, dan cemas (bukan mood tertekan atau gangguan kesadaran) mengarah ke gangguan kecemasan.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "80",
+    "question": "Pasien mengeluhkan mudah lupa dan kebingungan yang terjadi pasca stroke. Kondisi ini paling sesuai dengan...",
+    "options": [
+      "Demensia Alzheimer",
+      "Demensia Lewy body",
+      "Demensia vaskular",
+      "Demensia frontotemporal",
+      "Mild Cognitive Impairment (MCI)"
+    ],
+    "correct": 2,
+    "explanation": "Demensia vaskular: terjadi setelah stroke (onset relatif akut atau stepwise), ada hubungan temporal jelas antara event vaskular dengan gangguan kognitif.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "81",
+    "question": "Pemanis alternatif tidak berkalori yang aman untuk penderita DM adalah...",
+    "options": [
+      "Xylitol",
+      "Sukrosa",
+      "Aspartame",
+      "Fruktosa",
+      "Sorbitol"
+    ],
+    "correct": 2,
+    "explanation": "Aspartame adalah pemanis artifisial intensitas tinggi (200x manis dari sukrosa) dengan nol kalori dan tidak memengaruhi gula darah.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "82",
+    "question": "Serum albumin termasuk assessment jenis apa dalam evaluasi status gizi?",
+    "options": [
+      "Penilaian klinis",
+      "Penilaian asupan makanan",
+      "Penilaian biokimia/laboratorium",
+      "Skrining gizi",
+      "Pemeriksaan antropometri"
+    ],
+    "correct": 2,
+    "explanation": "Serum albumin adalah marker biokimia/laboratorium untuk status protein dan nutrisi.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "83",
+    "question": "Ketusuk jarum suntik (needlestick injury) termasuk dalam bahaya...",
+    "options": [
+      "Radiasi",
+      "Tekanan",
+      "Mekanis",
+      "Bio-mekanis",
+      "Biologis"
+    ],
+    "correct": 2,
+    "explanation": "Needlestick injury adalah bahaya MEKANIS (benda tajam/runcing yang dapat melukai fisik).",
+    "category": "Kedokteran Kerja",
+    "img": null
+  },
+  {
+    "id": "84",
+    "question": "Golongan zat yang terkandung dalam obat atau makanan yang dapat memicu hipotiroidisme adalah...",
+    "options": [
+      "Iodium dan selenium",
+      "Selenium dan kalium",
+      "Natrium dan litium",
+      "Kalium dan natrium",
+      "Litium dan iodium (dalam dosis berlebih)"
+    ],
+    "correct": 4,
+    "explanation": "Litium menghambat sintesis dan pelepasan hormon tiroid. Iodium berlebih (Efek Wolff-Chaikoff) juga bisa menyebabkan hipotiroid.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "85",
+    "question": "Tempat penyuntikan insulin yang paling direkomendasikan adalah...",
+    "options": [
+      "Deltoid",
+      "Paha bagian dalam",
+      "Lengan bagian dalam",
+      "Abdomen",
+      "Sekitar umbilikus"
+    ],
+    "correct": 3,
+    "explanation": "Abdomen (perut) adalah area penyuntikan insulin yang paling direkomendasikan karena absorpsi paling cepat dan konsisten.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "86",
+    "question": "Komplikasi kronik DM, KECUALI...",
+    "options": [
+      "Retinopati diabetik",
+      "Nefropati diabetik",
+      "Stroke perdarahan",
+      "Penyakit jantung koroner",
+      "Ketoasidosis diabetik"
+    ],
+    "correct": 4,
+    "explanation": "KAD (Ketoasidosis Diabetik) adalah komplikasi AKUT DM, bukan kronik. Komplikasi kronik DM: mikrovaskular (nefropati, retinopati, neuropati) dan makrovaskular.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "87",
+    "question": "Yang termasuk kortikosteroid kerja cepat adalah...",
+    "options": [
+      "Methylprednisolone",
+      "Deksametason",
+      "Betametasone",
+      "Kortison",
+      "Prednison"
+    ],
+    "correct": 1,
+    "explanation": "Deksametason adalah kortikosteroid dengan durasi kerja paling panjang (36-72 jam) dan potensi paling kuat.",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "88",
+    "question": "Intensitas olahraga yang direkomendasikan untuk pasien DM adalah...",
+    "options": [
+      "Hanya olahraga anaerobik",
+      "Tidak disarankan berolahraga",
+      "Rendah (ringan) saja",
+      "Tinggi (high intensity)",
+      "Sedang (moderate) - aerobik 150 menit/minggu"
+    ],
+    "correct": 4,
+    "explanation": "ADA/PERKENI merekomendasikan olahraga aerobik intensitas sedang (60-70% detak jantung maksimal) minimal 150 menit/minggu.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "89",
+    "question": "Cara kerja obat Ezetimibe adalah...",
+    "options": [
+      "Meningkatkan ekskresi asam empedu",
+      "Menghambat PCSK9",
+      "Menghambat absorpsi kolesterol di usus halus (NPC1L1)",
+      "Mengaktivasi enzim lipase",
+      "Menghambat HMG-CoA reduktase"
+    ],
+    "correct": 2,
+    "explanation": "Ezetimibe menghambat transporter NPC1L1 di enterosit usus halus, sehingga absorpsi kolesterol (dietal + bilier) berkurang.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "90",
+    "question": "Skor MNA yang menunjukkan risiko malnutrisi pada lansia adalah...",
+    "options": [
+      "12-14",
+      "19-30",
+      "15-18",
+      "8-11",
+      "0-7"
+    ],
+    "correct": 3,
+    "explanation": "MNA short form (0-14): 0-7=malnutrisi/risiko, 8-11=risiko malnutrisi, 12-14=normal.",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "91",
+    "question": "Hasil laboratorium yang khas pada hipotiroid primer adalah...",
+    "options": [
+      "T3 & T4 rendah, TSH naik",
+      "T3 & T4 tinggi, TSH tinggi",
+      "T3 & T4 rendah, TSH rendah",
+      "T3 & T4 normal, TSH normal",
+      "T3 & T4 tinggi, TSH rendah"
+    ],
+    "correct": 0,
+    "explanation": "Hipotiroid PRIMER: T3/T4 rendah -> TSH tinggi (kompensasi). Hipertiroid primer: T3/T4 tinggi, TSH rendah.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "92",
+    "question": "Kriteria prediabetes berdasarkan HbA1c adalah...",
+    "options": [
+      "HbA1c < 5,7%",
+      "HbA1c >= 6,5%",
+      "HbA1c 4-5,6%",
+      "HbA1c 5,7-6,4%",
+      "HbA1c > 7%"
+    ],
+    "correct": 3,
+    "explanation": "Kriteria ADA: Normal <5,7%, Prediabetes 5,7-6,4%, DM >=6,5%. Target terapi DM umumnya HbA1c <7%.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "93",
+    "question": "Perubahan farmakokinetik pada lansia yang paling benar adalah...",
+    "options": [
+      "Volume distribusi obat hidrofobik meningkat karena peningkatan massa lemak; klirens ginjal menurun; metabolisme hati berkurang",
+      "Semua obat terakumulasi lebih cepat dan dimetabolisme lebih efisien",
+      "Fungsi ginjal meningkat pada lansia",
+      "Absorpsi obat meningkat karena motilitas lambung lebih cepat",
+      "Protein plasma meningkat sehingga obat lebih banyak terikat"
+    ],
+    "correct": 0,
+    "explanation": "Farmakokinetik lansia: distribusi obat lipofilik naik (lemak tubuh naik), distribusi obat hidrofilik turun, protein plasma turun, klirens ginjal turun, metabolisme hati turun.",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "94",
+    "question": "Kriteria Beers List mencakup obat yang...",
+    "options": [
+      "Menetralisir racun dalam tubuh",
+      "Mempercepat penyembuhan pada lansia",
+      "Membuat pasien bingung dan meningkatkan risiko jatuh serta memiliki efek samping tidak proporsional pada lansia",
+      "Selalu kontraindikasi pada lansia muda",
+      "Wajib diberikan pada semua pasien geriatri"
+    ],
+    "correct": 2,
+    "explanation": "Beers List (AGS) adalah daftar obat berpotensi tidak aman pada lansia: menyebabkan kebingungan, risiko jatuh, aritmia, atau efek samping berlebihan.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "95",
+    "question": "Pasien lansia mudah lupa, mudah marah, dengan riwayat sebagai dosen S2. Gejala kognitif muncul bertahap. Diagnosis demensia yang paling sesuai adalah...",
+    "options": [
+      "Demensia frontotemporal",
+      "Demensia vaskular",
+      "Demensia Lewy body",
+      "Pick disease (FTD)",
+      "Demensia Alzheimer"
+    ],
+    "correct": 4,
+    "explanation": "Demensia Alzheimer: onset insidious, progresi bertahap, memori episodik terganggu duluan.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "96",
+    "question": "Pasien dengan perubahan perilaku menonjol, tidak ada gangguan gerak, dan tanpa riwayat stroke. Diagnosis demensia yang paling sesuai adalah...",
+    "options": [
+      "Demensia Alzheimer",
+      "Demensia vaskular",
+      "Demensia Parkinson",
+      "Demensia Lewy body",
+      "Pick disease / Demensia frontotemporal"
+    ],
+    "correct": 4,
+    "explanation": "FTD/Pick disease: perubahan perilaku dan kepribadian menonjol (disinhibisi, apati, impulsivitas), tanpa gangguan gerak, tanpa riwayat stroke.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "97",
+    "question": "Pasien dengan gejala demensia yang muncul setelah stroke iskemik. Diagnosis demensia yang paling sesuai adalah...",
+    "options": [
+      "Demensia Alzheimer",
+      "Demensia vaskular",
+      "Pick disease",
+      "Demensia frontotemporal",
+      "Demensia Lewy body"
+    ],
+    "correct": 1,
+    "explanation": "Demensia vaskular: ada hubungan kausal antara event serebrovaskular (stroke) dan gangguan kognitif.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "98",
+    "question": "Pernyataan yang benar tentang hiperparatiroid adalah...",
+    "options": [
+      "Menyebabkan peningkatan kalsium dalam darah (hiperkalsemia)",
+      "Hanya terjadi pada wanita pascamenopause",
+      "Tidak mempengaruhi densitas tulang",
+      "Menyebabkan penurunan kalsium dalam darah (hipokalsemia)",
+      "Selalu disebabkan oleh tumor paratiroid ganas"
+    ],
+    "correct": 0,
+    "explanation": "Hiperparatiroid -> PTH tinggi -> resorpsi tulang meningkat, absorpsi Ca di usus meningkat, reabsorbsi Ca di ginjal meningkat -> HIPERKALSEMIA.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "99",
+    "question": "Pernyataan yang benar tentang penyakit Cushing (Cushing disease) adalah...",
+    "options": [
+      "Peningkatan ACTH akibat tumor hipofisis yang mengakibatkan hiperkortisol",
+      "Disebabkan oleh hiperplasia adrenal kongenital",
+      "Disebabkan oleh tumor pankreas",
+      "Disebabkan oleh tumor adrenal penghasil kortisol",
+      "Disebabkan oleh konsumsi kortikosteroid jangka panjang"
+    ],
+    "correct": 0,
+    "explanation": "Cushing DISEASE spesifik = adenoma hipofisis -> ACTH berlebih -> korteks adrenal overstimulasi -> kortisol tinggi.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "100",
+    "question": "Prinsip kerja Ezetimibe adalah...",
+    "options": [
+      "Mengurangi absorpsi kolesterol di usus (inhibisi NPC1L1)",
+      "Inhibisi PCSK9",
+      "Mencegah reabsorpsi asam empedu",
+      "Menginhibisi HMG-CoA reduktase",
+      "Memicu sintesis enzim lipase"
+    ],
+    "correct": 0,
+    "explanation": "Ezetimibe menginhibisi NPC1L1 di brush border usus halus -> absorpsi kolesterol turun ~50%.",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "101",
+    "question": "Obat statin yang efektivitasnya mencapai penurunan LDL lebih dari 50% adalah...",
+    "options": [
+      "Pitavastatin 20 mg",
+      "Rosuvastatin 20 mg",
+      "Atorvastatin 40 mg",
+      "Simvastatin 10 mg",
+      "Lovastatin 40 mg"
+    ],
+    "correct": 2,
+    "explanation": "High-intensity statin: Atorvastatin 40-80 mg dan Rosuvastatin 20-40 mg (menurunkan LDL >=50%).",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "102",
+    "question": "Pasien curiga berlebihan terhadap orang sekitar, khawatir, dan mudah marah. Jenis demensia yang paling sesuai adalah...",
+    "options": [
+      "Pick disease",
+      "Demensia Alzheimer",
+      "Demensia frontotemporal",
+      "Demensia vaskular",
+      "Demensia Lewy body"
+    ],
+    "correct": 4,
+    "explanation": "Demensia Lewy body: ditandai fluktuasi kognisi, halusinasi visual yang jelas, dan parkinsonisme. Paranoia dan kecurigaan berlebihan juga sering ada.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "103",
+    "question": "Yang membedakan delirium dengan depresi adalah...",
+    "options": [
+      "Delirium ditandai dengan fluktuasi kesadaran, gangguan atensi akut; depresi ditandai mood tertekan tanpa gangguan kesadaran",
+      "Delirium memiliki onset lebih lambat dibanding depresi",
+      "Delirium hanya terjadi pada lansia",
+      "Keduanya memiliki gambaran klinis yang identik",
+      "Depresi selalu disertai gangguan kesadaran"
+    ],
+    "correct": 0,
+    "explanation": "Delirium: onset akut, fluktuasi kesadaran, gangguan atensi. Depresi: onset subakut/kronik, mood tertekan/anhedonia, kesadaran normal.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "104",
+    "question": "Selalu ada dalam setiap proses produksi/pekerjaan adalah...",
+    "options": [
+      "Rekayasa",
+      "Bahaya",
+      "Risiko",
+      "Perlindungan",
+      "Pertolongan"
+    ],
+    "correct": 1,
+    "explanation": "Dalam K3, bahaya (hazard) selalu ada di setiap proses produksi. Risiko adalah probabilitas bahaya menjadi kerugian.",
+    "category": "Kedokteran Kerja",
+    "img": null
+  },
+  {
+    "id": "105",
+    "question": "Makanan atau obat yang dapat menghambat enzim CYP-450 sehingga meningkatkan kadar obat dalam darah adalah...",
+    "options": [
+      "Susu",
+      "Teh hijau",
+      "Rokok",
+      "Jus grapefruit",
+      "Ikan bakar"
+    ],
+    "correct": 3,
+    "explanation": "Jus grapefruit mengandung furanocoumarin yang menghambat CYP3A4 di usus -> absorpsi obat meningkat, kadar darah naik -> potensi toksisitas.",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "106",
+    "question": "Seorang lansia diketahui baru saja kehilangan istrinya 2 tahun lalu. Ia sangat takut dan gelisah memikirkan kematian. Diagnosis yang paling sesuai adalah...",
+    "options": [
+      "Delirium",
+      "Parkinson",
+      "Gangguan kecemasan (anxiety)",
+      "Depresi",
+      "Alzheimer"
+    ],
+    "correct": 2,
+    "explanation": "Keluhan utama rasa takut/gelisah berlebihan tentang kematian setelah kehilangan pasangan -> gangguan kecemasan (anxiety disorder).",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "107",
+    "question": "Seorang lansia marah-marah, lupa nama dokter saat ditanya kembali, dan tidak ingat terakhir makan 1 jam lalu. Pemeriksaan lanjutan yang paling tepat adalah...",
+    "options": [
+      "GCS (Glasgow Coma Scale)",
+      "NIHSS (National Institutes of Health Stroke Scale)",
+      "MMSE dan Clock Drawing Test",
+      "RASS (Richmond Agitation-Sedation Scale)",
+      "MoCA (Montreal Cognitive Assessment)"
+    ],
+    "correct": 2,
+    "explanation": "Gejala gangguan memori jangka pendek dan BPSD -> evaluasi kognitif. MMSE + Clock Drawing Test adalah pemeriksaan skrining kognitif yang tepat.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "108",
+    "question": "Obat yang digunakan untuk menangani delirium adalah...",
+    "options": [
+      "Haloperidol 0,5-1 mg",
+      "Donepezil 10 mg",
+      "Morfin 10 mg",
+      "Alprazolam 2 mg",
+      "Diazepam 10 mg"
+    ],
+    "correct": 0,
+    "explanation": "Haloperidol dosis rendah (0,5-1 mg) adalah antipsikotik yang digunakan untuk agitasi/delirium. Benzodiazepin kontraindikasi pada delirium non-alkohol.",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "110",
+    "question": "Tujuan terapi paliatif pada pasien lansia adalah...",
+    "options": [
+      "Menghentikan semua terapi medis",
+      "Menyembuhkan penyakit secara total",
+      "Memperpanjang usia seberapapun kondisi pasien",
+      "Meningkatkan kualitas hidup, mengurangi nyeri dan penderitaan, serta mendukung pasien dan keluarga secara holistik",
+      "Hanya memberikan terapi nutrisi"
+    ],
+    "correct": 3,
+    "explanation": "Paliatif care bertujuan meningkatkan kualitas hidup, mengelola nyeri dan gejala, memberikan dukungan psikologis, sosial, dan spiritual.",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "G1",
+    "question": "Berdasarkan gambar klinis USG di bawah, apakah diagnosis yang paling tepat?",
+    "options": [
+      "Graves Disease",
+      "Tiroiditis De Quervain",
+      "Parkinson Disease",
+      "Cushing Syndrome",
+      "Hashimoto Thyroiditis"
+    ],
+    "correct": 4,
+    "explanation": "Gambaran USG tiroid menunjukkan pola hipoechoic difus dengan tekstur heterogen - khas untuk Tiroiditis Hashimoto (penyakit autoimun tiroid). Graves Disease biasanya disertai peningkatan vaskularisasi (thyroid inferno) pada color Doppler.",
+    "category": "Endokrin-Metabolik (Bergambar)",
+    "img": "img1"
+  },
+  {
+    "id": "G2",
+    "question": "Perhatikan grafik Population by age group, World di atas. Manakah pernyataan yang paling benar?",
+    "options": [
+      "Proyeksi data masa depan berdasarkan skenario rendah PBB",
+      "Kelompok Under-25s diproyeksikan terus meningkat hingga tahun 2100",
+      "Kelompok Ages 25-64 adalah kelompok dengan populasi terbesar pada tahun 2020 dan diproyeksikan terus tumbuh",
+      "Total populasi dunia diproyeksikan menurun setelah tahun 2050",
+      "Kelompok Ages 65+ memiliki populasi lebih besar dari Under-15s sejak tahun 1950"
+    ],
+    "correct": 2,
+    "explanation": "Kelompok Ages 25-64 memiliki populasi terbesar (~4 miliar) pada 2020 dan diproyeksikan terus meningkat. Under-25s justru mendatar/menurun setelah 2020.",
+    "category": "Demografi & Epidemiologi (Bergambar)",
+    "img": "img2"
+  },
+  {
+    "id": "G3",
+    "question": "Perhatikan grafik populasi dunia berdasarkan kelompok usia. Manakah pernyataan yang benar mengenai proyeksi Ages 65+?",
+    "options": [
+      "Data dalam grafik ini bersumber dari World Bank",
+      "Kelompok Ages 25-64 mengalami penurunan sejak tahun 1980",
+      "Total populasi dunia sudah mencapai 10 miliar sebelum tahun 2000",
+      "Populasi Under-5s terus meningkat tajam dari 1950 hingga 2100",
+      "Kelompok Ages 65+ diproyeksikan melampaui Under-15s sebelum tahun 2100"
+    ],
+    "correct": 4,
+    "explanation": "Grafik menunjukkan Ages 65+ memiliki tren meningkat tajam dan diproyeksikan mendekati/melampaui Under-15s sebelum 2100, mencerminkan populasi menua global.",
+    "category": "Demografi & Epidemiologi (Bergambar)",
+    "img": "img2"
+  },
+  {
+    "id": "G4",
+    "question": "Berdasarkan grafik populasi dunia, pernyataan yang benar tentang kelompok Under-15s adalah...",
+    "options": [
+      "Semua kelompok usia menunjukkan tren peningkatan hingga 2100",
+      "Kelompok Ages 25-64 diproyeksikan menurun drastis setelah 2060",
+      "Proyeksi berbasis skenario tinggi PBB",
+      "Kelompok Under-15s mencapai puncaknya sekitar tahun 2020 lalu diproyeksikan menurun atau mendatar",
+      "Populasi total dunia pada tahun 2020 sudah melampaui 10 miliar"
+    ],
+    "correct": 3,
+    "explanation": "Grafik menunjukkan Under-15s mencapai plateau sekitar 2020 kemudian diproyeksikan mendatar/sedikit menurun - refleksi penurunan fertilitas global.",
+    "category": "Demografi & Epidemiologi (Bergambar)",
+    "img": "img2"
+  },
+  {
+    "id": "G5",
+    "question": "Berdasarkan grafik populasi dunia, manakah yang paling benar mengenai proyeksi Ages 65+?",
+    "options": [
+      "Proyeksi menunjukkan Ages 65+ akan menjadi kelompok dengan pertumbuhan paling signifikan dibanding kelompok usia muda",
+      "Kelompok Under-5s diproyeksikan mencapai 2 miliar pada tahun 2100",
+      "Pada tahun 1950, kelompok Under-25s memiliki populasi lebih kecil dari Ages 25-64",
+      "Data bersumber dari World Bank bukan PBB",
+      "Total populasi dunia diproyeksikan stabil di angka 8 miliar setelah tahun 2020"
+    ],
+    "correct": 0,
+    "explanation": "Proyeksi grafik menunjukkan Ages 65+ memiliki pertumbuhan paling cepat dibanding semua kelompok usia muda, mencerminkan populasi menua global.",
+    "category": "Demografi & Epidemiologi (Bergambar)",
+    "img": "img2"
+  },
+  {
+    "id": "G2e",
+    "question": "Berdasarkan grafik Population by age group, World di atas, proyeksi demografis masa depan yang ditampilkan dalam grafik tersebut didasarkan pada...",
+    "options": [
+      "Proyeksi didasarkan pada skenario tinggi PBB",
+      "Proyeksi bersumber dari data World Bank",
+      "Proyeksi didasarkan pada model statistik Institut Kependudukan nasional",
+      "Proyeksi menggunakan skenario rendah PBB berdasarkan fertilitas menurun",
+      "Proyeksi masa depan didasarkan pada skenario medium PBB"
+    ],
+    "correct": 4,
+    "explanation": "Proyeksi populasi dunia dalam grafik didasarkan pada skenario medium PBB (UN World Population Prospects - medium variant) yang merupakan proyeksi standar paling sering digunakan untuk perencanaan kebijakan global.",
+    "category": "Demografi & Epidemiologi (Bergambar)",
+    "img": "img2"
+  },
+  {
+    "id": "G6",
+    "question": "Perhatikan gambar potongan otak di atas. Gambaran tersebut dikenal sebagai Mickey Mouse sign. Diagnosis yang paling sesuai adalah...",
+    "options": [
+      "Tiroiditis Hashimoto",
+      "Alzheimer",
+      "Demensia vaskular",
+      "Parkinson",
+      "Graves disease"
+    ],
+    "correct": 3,
+    "explanation": "Mickey Mouse sign pada MRI otak menunjukkan atrofi tegmentum mesensefalon dengan pembesaran ventrikel III - gambaran khas pada Penyakit Parkinson dan kondisi terkait (PSP).",
+    "category": "Neurologi-Geriatri (Bergambar)",
+    "img": "img3"
+  },
+  {
+    "id": "G7",
+    "question": "Berdasarkan gambar klinis USG di atas, apakah diagnosis yang paling tepat?",
+    "options": [
+      "Hashimoto Thyroiditis",
+      "Tiroiditis De Quervain",
+      "Graves Disease",
+      "Noduler Thyroid",
+      "Karsinoma Tiroid Papiler"
+    ],
+    "correct": 2,
+    "explanation": "Gambaran USG tiroid menunjukkan peningkatan vaskularisasi difus (thyroid inferno) pada color Doppler dengan kelenjar tiroid yang membesar secara difus - khas untuk Graves Disease.",
+    "category": "Endokrin-Metabolik (Bergambar)",
+    "img": "img4"
+  },
+  {
+    "id": "G8",
+    "question": "Berdasarkan gambar klinis USG di atas, apakah diagnosis yang paling tepat?",
+    "options": [
+      "Graves Disease",
+      "Hashimoto Thyroiditis",
+      "Tiroiditis De Quervain",
+      "Karsinoma Tiroid Papiler",
+      "Noduler Thyroid"
+    ],
+    "correct": 4,
+    "explanation": "Gambaran USG menunjukkan satu atau lebih nodul tiroid yang terlokalisir dengan batas jelas - khas untuk Noduler Thyroid (struma nodosa). Berbeda dengan Hashimoto yang gambaran hipoechoic difus.",
+    "category": "Endokrin-Metabolik (Bergambar)",
+    "img": "img5"
+  },
+  {
+    "id": "G9",
+    "question": "Kumpulan gambar klinis berikut mengambarkan suatu kondisi terhambatnya pertumbuhan fisik dan perkembangan mental secara parah pada bayi dan anak-anak akibat kekurangan hormon tiroid sejak lahir.",
+    "options": [
+      "Gigantisme Kongenital",
+      "Sindrom Down",
+      "Cretinism/Congenital Cretinism",
+      "Hipopituitarisme",
+      "Sindrom Turner"
+    ],
+    "correct": 2,
+    "explanation": "Gambaran klinis menunjukkan tanda-tanda kretinisme kongenital: perawakan pendek, wajah khas (hidung pesek, dahi menonjol), retardasi mental, hipotonia - akibat defisiensi hormon tiroid sejak lahir yang tidak tertangani.",
+    "category": "Endokrin-Metabolik (Bergambar)",
+    "img": "img6"
+  },
+  {
+    "id": "G10",
+    "question": "Pada lingkaran yang ditunjuk, terdapat pola pencitraan yang terlihat seperti tanda ekor burung walet, tanda dan deteksi penyakit apa yang tepat?",
+    "options": [
+      "Hummingbird sign, Progressive Supranuclear Palsy (PSP)",
+      "Bird Beak Sign, Parkinson",
+      "Mickey Mouse Sign, Corticobasal Syndrome (CBS)",
+      "Morning Glory Sign, Multiple System Atrophy (MSA)",
+      "Swallow-tail sign, Parkinson"
+    ],
+    "correct": 4,
+    "explanation": "Swallow-tail sign (tanda ekor burung walet) pada MRI SWI/nigrosome-1 menunjukkan integritas substansia nigra pars compacta yang normal berbentuk seperti ekor walet. Ketika tanda ini TIDAK terlihat (absent swallow-tail sign), hal ini merupakan petanda khas hilangnya sel dopaminergik pada Penyakit Parkinson.",
+    "category": "Neurologi-Geriatri (Bergambar)",
+    "img": "img7"
+  }
+]
