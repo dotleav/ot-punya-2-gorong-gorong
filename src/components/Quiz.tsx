@@ -50,14 +50,6 @@ function shuffleArray<T>(arr: T[]): T[] {
   return a
 }
 
-// ── Audio ─────────────────────────────────────────────────────────────────────
-
-function playSound(correct: boolean) {
-  const src = correct ? '/benar.mp3' : '/salah.mp3'
-  const audio = new Audio(src)
-  audio.play().catch(() => { /* autoplay blocked, ignore */ })
-}
-
 // ── LocalStorage (Mode Biasa — persists across refresh & tab close) ────────────
 
 const LS_KEY = 'quiz_biasa_progress'
@@ -110,6 +102,23 @@ export default function Quiz() {
   const [currentIdx, setCurrentIdx]               = useState(0)
   const [timeLeft, setTimeLeft]                   = useState(EXAM_TIMER)
   const [qPhase, setQPhase]                       = useState<QuestionPhase>('answering')
+
+  // ── Audio refs (preloaded so browser allows instant play on click) ──
+  const audioBenar = useRef<HTMLAudioElement | null>(null)
+  const audioSalah = useRef<HTMLAudioElement | null>(null)
+  useEffect(() => {
+    audioBenar.current = new Audio('/benar.mp3')
+    audioSalah.current = new Audio('/salah.mp3')
+    audioBenar.current.load()
+    audioSalah.current.load()
+  }, [])
+
+  function playSound(correct: boolean) {
+    const audio = correct ? audioBenar.current : audioSalah.current
+    if (!audio) return
+    audio.currentTime = 0
+    audio.play().catch(() => { /* blocked by browser policy */ })
+  }
 
   // Ref for beforeunload
   const isTentamenRunningRef = useRef(false)
