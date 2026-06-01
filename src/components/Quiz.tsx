@@ -106,6 +106,7 @@ export default function Quiz() {
   // ── Audio refs (preloaded so browser allows instant play on click) ──
   const audioBenar = useRef<HTMLAudioElement | null>(null)
   const audioSalah = useRef<HTMLAudioElement | null>(null)
+  const [isMuted, setIsMuted] = useState(false)
   useEffect(() => {
     audioBenar.current = new Audio('./benar.mp3')
     audioSalah.current = new Audio('./salah.mp3')
@@ -114,6 +115,7 @@ export default function Quiz() {
   }, [])
 
   function playSound(correct: boolean) {
+    if (isMuted) return
     const audio = correct ? audioBenar.current : audioSalah.current
     if (!audio) return
     audio.currentTime = 0
@@ -335,35 +337,54 @@ export default function Quiz() {
               </p>
             </div>
 
-            {/* Live tracker */}
-            {quizMode === 'biasa' && biasaActive && (
-              <div style={{ textAlign: 'right', minWidth: '70px' }}>
-                <div style={{
-                  fontFamily: '"JetBrains Mono", monospace',
-                  color: '#e8a838',
-                  fontSize: '0.9rem',
-                  fontWeight: 700,
-                }}>
-                  {biasaAnsweredCount}/{biasaQuestions.length}
+            {/* Right side: tracker + mute */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              {quizMode === 'biasa' && biasaActive && (
+                <div style={{ textAlign: 'right', minWidth: '70px' }}>
+                  <div style={{
+                    fontFamily: '"JetBrains Mono", monospace',
+                    color: '#e8a838',
+                    fontSize: '0.9rem',
+                    fontWeight: 700,
+                  }}>
+                    {biasaAnsweredCount}/{biasaQuestions.length}
+                  </div>
+                  <div style={{ color: '#6e7681', fontSize: '0.65rem', lineHeight: 1.3 }}>
+                    dijawab · benar <span style={{ color: '#4ade80' }}>{biasaCorrectCount}</span>
+                  </div>
                 </div>
-                <div style={{ color: '#6e7681', fontSize: '0.65rem', lineHeight: 1.3 }}>
-                  dijawab · benar <span style={{ color: '#4ade80' }}>{biasaCorrectCount}</span>
+              )}
+              {quizMode === 'tentamen' && tentamenState === 'running' && (
+                <div style={{ textAlign: 'right' }}>
+                  <div style={{
+                    fontFamily: '"JetBrains Mono", monospace',
+                    color: '#e8a838',
+                    fontSize: '0.9rem',
+                    fontWeight: 700,
+                  }}>
+                    {currentIdx + 1}/{tentamenQuestions.length}
+                  </div>
+                  <div style={{ color: '#6e7681', fontSize: '0.65rem' }}>soal</div>
                 </div>
-              </div>
-            )}
-            {quizMode === 'tentamen' && tentamenState === 'running' && (
-              <div style={{ textAlign: 'right' }}>
-                <div style={{
-                  fontFamily: '"JetBrains Mono", monospace',
-                  color: '#e8a838',
-                  fontSize: '0.9rem',
-                  fontWeight: 700,
-                }}>
-                  {currentIdx + 1}/{tentamenQuestions.length}
-                </div>
-                <div style={{ color: '#6e7681', fontSize: '0.65rem' }}>soal</div>
-              </div>
-            )}
+              )}
+              <button
+                onClick={() => setIsMuted(m => !m)}
+                title={isMuted ? 'Nyalakan suara' : 'Matikan suara'}
+                style={{
+                  background: 'none',
+                  border: '1px solid #30363d',
+                  borderRadius: '6px',
+                  padding: '5px 8px',
+                  cursor: 'pointer',
+                  color: isMuted ? '#6e7681' : '#e8a838',
+                  fontSize: '1rem',
+                  lineHeight: 1,
+                  flexShrink: 0,
+                }}
+              >
+                {isMuted ? '🔇' : '🔊'}
+              </button>
+            </div>
           </div>
         </header>
 
