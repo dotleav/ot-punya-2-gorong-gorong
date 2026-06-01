@@ -67,7 +67,7 @@ export default function Quiz() {
   const [qPhase, setQPhase]                 = useState<QuestionPhase>('answering')
 
   useEffect(() => {
-    fetch('./questions.json')
+    fetch('/questions.json')
       .then(r => r.json())
       .then((data: Question[]) => setQuestions(data))
   }, [])
@@ -938,7 +938,7 @@ function QuestionCard({ q, qNum, answer, onAnswer }: {
       {q.img && (
         <div style={{ borderRadius: '10px', overflow: 'hidden', border: '1px solid #30363d', marginBottom: '14px' }}>
           <img
-            src={`/${q.img}.png`}
+            src={`./${q.img}.png`}
             alt={`Gambar soal ${qNum}`}
             style={{ width: '100%', objectFit: 'contain', maxHeight: '280px', backgroundColor: '#fff' }}
           />
