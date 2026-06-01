@@ -67,7 +67,7 @@ export default function Quiz() {
   const [qPhase, setQPhase]                 = useState<QuestionPhase>('answering')
 
   useEffect(() => {
-    fetch('/questions.json')
+    fetch('./questions.json')
       .then(r => r.json())
       .then((data: Question[]) => setQuestions(data))
   }, [])
