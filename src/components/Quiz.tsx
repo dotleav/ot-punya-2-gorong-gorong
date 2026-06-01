@@ -107,8 +107,8 @@ export default function Quiz() {
   const audioBenar = useRef<HTMLAudioElement | null>(null)
   const audioSalah = useRef<HTMLAudioElement | null>(null)
   useEffect(() => {
-    audioBenar.current = new Audio('/benar.mp3')
-    audioSalah.current = new Audio('/salah.mp3')
+    audioBenar.current = new Audio('./benar.mp3')
+    audioSalah.current = new Audio('./salah.mp3')
     audioBenar.current.load()
     audioSalah.current.load()
   }, [])
