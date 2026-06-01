@@ -50,6 +50,14 @@ function shuffleArray<T>(arr: T[]): T[] {
   return a
 }
 
+// ── Audio ─────────────────────────────────────────────────────────────────────
+
+function playSound(correct: boolean) {
+  const src = correct ? '/benar.mp3' : '/salah.mp3'
+  const audio = new Audio(src)
+  audio.play().catch(() => { /* autoplay blocked, ignore */ })
+}
+
 // ── LocalStorage (Mode Biasa — persists across refresh & tab close) ────────────
 
 const LS_KEY = 'quiz_biasa_progress'
@@ -231,9 +239,11 @@ export default function Quiz() {
   const handleAnswerBiasa = useCallback((qIdx: number, optIdx: number) => {
     setBiasaAnswers(prev => {
       if (prev[qIdx] !== null) return prev
-      const n = [...prev]; n[qIdx] = optIdx; return n
+      const n = [...prev]; n[qIdx] = optIdx
+      playSound(optIdx === biasaQuestions[qIdx]?.correct)
+      return n
     })
-  }, [])
+  }, [biasaQuestions])
 
   // ── Mode Tentamen handlers ──
   const handleStartTentamen = useCallback(() => {
@@ -256,10 +266,12 @@ export default function Quiz() {
   const handleAnswerTentamen = useCallback((optIdx: number) => {
     setTentamenAnswers(prev => {
       if (prev[currentIdx] !== null) return prev
-      const n = [...prev]; n[currentIdx] = optIdx; return n
+      const n = [...prev]; n[currentIdx] = optIdx
+      playSound(optIdx === tentamenQuestions[currentIdx]?.correct)
+      return n
     })
     setQPhase('answered_manual')
-  }, [currentIdx])
+  }, [currentIdx, tentamenQuestions])
 
   const goNext = useCallback(() => {
     if (currentIdx >= tentamenQuestions.length - 1) {
