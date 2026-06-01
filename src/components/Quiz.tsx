@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, type CSSProperties } from 'react'
+import { useState, useEffect, useCallback, useRef, type CSSProperties } from 'react'
 import {
   CheckCircle, XCircle, BookOpen, Trophy,
   Filter, Shuffle, RotateCcw, ChevronRight, ImageIcon,
@@ -50,21 +50,77 @@ function shuffleArray<T>(arr: T[]): T[] {
   return a
 }
 
+// ── Session Storage ────────────────────────────────────────────────────────────
+
+const SS_KEY = 'quiz_progress'
+
+interface SavedState {
+  quizMode: QuizMode
+  appState: AppState
+  selectedCategory: string
+  shuffleOn: boolean
+  activeQuestions: Question[]
+  answers: AnswerState[]
+  currentIdx: number
+  timeLeft: number
+  qPhase: QuestionPhase
+}
+
+function loadSession(): SavedState | null {
+  try {
+    const raw = sessionStorage.getItem(SS_KEY)
+    return raw ? (JSON.parse(raw) as SavedState) : null
+  } catch {
+    return null
+  }
+}
+
+function saveSession(state: SavedState) {
+  try {
+    sessionStorage.setItem(SS_KEY, JSON.stringify(state))
+  } catch { /* quota exceeded — silently ignore */ }
+}
+
+function clearSession() {
+  try { sessionStorage.removeItem(SS_KEY) } catch { /* noop */ }
+}
+
 // ── Root Component ─────────────────────────────────────────────────────────────
 
 export default function Quiz() {
+  // ── Restore from session storage (survives refresh, resets on tab close) ──
+  const saved = loadSession()
+
   const [questions, setQuestions]           = useState<Question[]>([])
-  const [quizMode, setQuizMode]             = useState<QuizMode>('biasa')
-  const [appState, setAppState]             = useState<AppState>('setup')
-  const [selectedCategory, setSelectedCat] = useState('Semua')
-  const [shuffleOn, setShuffleOn]           = useState(false)
-  const [activeQuestions, setActiveQs]      = useState<Question[]>([])
-  const [answers, setAnswers]               = useState<AnswerState[]>([])
+  const [quizMode, setQuizMode]             = useState<QuizMode>(saved?.quizMode ?? 'biasa')
+  const [appState, setAppState]             = useState<AppState>(saved?.appState ?? 'setup')
+  const [selectedCategory, setSelectedCat] = useState(saved?.selectedCategory ?? 'Semua')
+  const [shuffleOn, setShuffleOn]           = useState(saved?.shuffleOn ?? false)
+  const [activeQuestions, setActiveQs]      = useState<Question[]>(saved?.activeQuestions ?? [])
+  const [answers, setAnswers]               = useState<AnswerState[]>(saved?.answers ?? [])
 
   // Tentamen state
-  const [currentIdx, setCurrentIdx]         = useState(0)
-  const [timeLeft, setTimeLeft]             = useState(EXAM_TIMER)
-  const [qPhase, setQPhase]                 = useState<QuestionPhase>('answering')
+  const [currentIdx, setCurrentIdx]         = useState(saved?.currentIdx ?? 0)
+  // Paused timers resume at saved value; if answering was in progress give a 3-sec grace
+  const [timeLeft, setTimeLeft]             = useState(
+    saved?.qPhase === 'answering' ? Math.max(saved.timeLeft - 3, 1) : (saved?.timeLeft ?? EXAM_TIMER)
+  )
+  const [qPhase, setQPhase]                 = useState<QuestionPhase>(saved?.qPhase ?? 'answering')
+
+  // Ref to always hold latest "is quiz running" flag for beforeunload handler
+  const isRunningRef = useRef(appState === 'running')
+  useEffect(() => { isRunningRef.current = appState === 'running' }, [appState])
+
+  // ── beforeunload confirmation when quiz is active ──
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (!isRunningRef.current) return
+      e.preventDefault()
+      e.returnValue = '' // required for Chrome to show the dialog
+    }
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
+  }, [])
 
   useEffect(() => {
     fetch('./questions.json')
@@ -99,6 +155,25 @@ export default function Quiz() {
     return () => clearTimeout(t)
   }, [appState, quizMode, qPhase, currentIdx, activeQuestions.length])
 
+  // ── Persist quiz state to sessionStorage (auto-reset on tab close) ──
+  useEffect(() => {
+    if (appState === 'setup') {
+      clearSession()
+      return
+    }
+    saveSession({
+      quizMode,
+      appState,
+      selectedCategory,
+      shuffleOn,
+      activeQuestions,
+      answers,
+      currentIdx,
+      timeLeft,
+      qPhase,
+    })
+  }, [quizMode, appState, selectedCategory, shuffleOn, activeQuestions, answers, currentIdx, timeLeft, qPhase])
+
   const categories = ['Semua', ...Array.from(new Set(questions.map(q => q.category))).sort()]
 
   const buildQuestions = useCallback((cat: string, shuffle: boolean): Question[] => {
@@ -118,6 +193,7 @@ export default function Quiz() {
   }, [buildQuestions, selectedCategory, shuffleOn])
 
   const resetToSetup = useCallback(() => {
+    clearSession()
     setAppState('setup')
     setActiveQs([])
     setAnswers([])
