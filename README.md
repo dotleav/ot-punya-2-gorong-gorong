@@ -26,3 +26,4 @@ Open [http://localhost:3000](http://localhost:3000).
 - Timer and score tracking
 - Results screen with wrong-answer review
 - Full review mode with navigation through all questions
+ 
