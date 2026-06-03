@@ -112,6 +112,10 @@ export default function Quiz() {
   const audioBenar = useRef<HTMLAudioElement | null>(null)
   const audioSalah = useRef<HTMLAudioElement | null>(null)
   const [isMuted, setIsMuted] = useState(false)
+  // Ref selalu sinkron dengan isMuted — dibaca oleh playSound
+  // agar tidak terjadi stale closure di dalam useCallback maupun setState.
+  const isMutedRef = useRef(false)
+  useEffect(() => { isMutedRef.current = isMuted }, [isMuted])
   useEffect(() => {
     audioBenar.current = new Audio('./benar.mp3')
     audioSalah.current = new Audio('./salah.mp3')
@@ -119,13 +123,13 @@ export default function Quiz() {
     audioSalah.current.load()
   }, [])
 
-  function playSound(correct: boolean) {
-    if (isMuted) return
+  const playSound = useCallback((correct: boolean) => {
+    if (isMutedRef.current) return
     const audio = correct ? audioBenar.current : audioSalah.current
     if (!audio) return
     audio.currentTime = 0
     audio.play().catch(() => { /* blocked by browser policy */ })
-  }
+  }, [])
 
   // Ref for beforeunload
   const isTentamenRunningRef = useRef(false)
@@ -253,13 +257,15 @@ export default function Quiz() {
   }
 
   const handleAnswerBiasa = useCallback((qIdx: number, optIdx: number) => {
+    let shouldPlay: boolean | null = null
     setBiasaAnswers(prev => {
       if (prev[qIdx] !== null) return prev
       const n = [...prev]; n[qIdx] = optIdx
-      playSound(optIdx === biasaQuestions[qIdx]?.correct)
+      shouldPlay = optIdx === biasaQuestions[qIdx]?.correct
       return n
     })
-  }, [biasaQuestions])
+    if (shouldPlay !== null) playSound(shouldPlay)
+  }, [biasaQuestions, playSound])
 
   // ── Mode Tentamen handlers ──
   const handleStartTentamen = useCallback(() => {
@@ -280,14 +286,16 @@ export default function Quiz() {
   }, [])
 
   const handleAnswerTentamen = useCallback((optIdx: number) => {
+    let shouldPlay: boolean | null = null
     setTentamenAnswers(prev => {
       if (prev[currentIdx] !== null) return prev
       const n = [...prev]; n[currentIdx] = optIdx
-      playSound(optIdx === tentamenQuestions[currentIdx]?.correct)
+      shouldPlay = optIdx === tentamenQuestions[currentIdx]?.correct
       return n
     })
+    if (shouldPlay !== null) playSound(shouldPlay)
     setQPhase('answered_manual')
-  }, [currentIdx, tentamenQuestions])
+  }, [currentIdx, tentamenQuestions, playSound])
 
   const goNext = useCallback(() => {
     if (currentIdx >= tentamenQuestions.length - 1) {
