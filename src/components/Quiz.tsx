@@ -106,18 +106,24 @@ export default function Quiz() {
   // ── Audio refs (preloaded so browser allows instant play on click) ──
   const audioBenar = useRef<HTMLAudioElement | null>(null)
   const audioSalah = useRef<HTMLAudioElement | null>(null)
-  const [isMuted, setIsMuted] = useState(false)
+  // Bug fix #2: baca status mute dari localStorage agar persist setelah refresh
+  const [isMuted, setIsMuted] = useState(() => localStorage.getItem('quiz_muted') === 'true')
   useEffect(() => {
-    audioBenar.current = new Audio('/benar.mp3')
-    audioSalah.current = new Audio('/salah.mp3')
-    audioBenar.current.load()
-    audioSalah.current.load()
+    // Bug fix #1: gunakan path relatif agar benar di GitHub Pages subdirectory
+    // Bug fix #3: hapus .load() — browser akan load otomatis saat .play() dipanggil
+    audioBenar.current = new Audio('./benar.mp3')
+    audioSalah.current = new Audio('./salah.mp3')
   }, [])
 
   // Ref selalu sinkron dengan isMuted — dibaca oleh playSound
   // agar tidak terjadi stale closure di dalam useCallback.
-  const isMutedRef = useRef(false)
-  useEffect(() => { isMutedRef.current = isMuted }, [isMuted])
+  // Bug fix #4: init ref dengan nilai awal isMuted (bukan selalu false)
+  const isMutedRef = useRef(isMuted)
+  useEffect(() => {
+    isMutedRef.current = isMuted
+    // Bug fix #2: simpan ke localStorage agar persist setelah refresh
+    localStorage.setItem('quiz_muted', String(isMuted))
+  }, [isMuted])
 
   const playSound = useCallback((correct: boolean) => {
     if (isMutedRef.current) return
