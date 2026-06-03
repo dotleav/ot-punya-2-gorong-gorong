@@ -53,10 +53,8 @@ function shuffleArray<T>(arr: T[]): T[] {
 // ── LocalStorage (Mode Biasa — persists across refresh & tab close) ────────────
 
 const LS_KEY = 'quiz_biasa_progress'
-const LS_VERSION = 3
 
 interface SavedBiasaState {
-  version: number
   selectedCategory: string
   shuffleOn: boolean
   activeQuestions: Question[]
@@ -66,18 +64,15 @@ interface SavedBiasaState {
 function loadBiasa(): SavedBiasaState | null {
   try {
     const raw = localStorage.getItem(LS_KEY)
-    if (!raw) return null
-    const parsed = JSON.parse(raw) as SavedBiasaState
-    if (parsed.version !== LS_VERSION) return null
-    return parsed
+    return raw ? (JSON.parse(raw) as SavedBiasaState) : null
   } catch {
     return null
   }
 }
 
-function saveBiasa(state: Omit<SavedBiasaState, 'version'>) {
+function saveBiasa(state: SavedBiasaState) {
   try {
-    localStorage.setItem(LS_KEY, JSON.stringify({ version: LS_VERSION, ...state }))
+    localStorage.setItem(LS_KEY, JSON.stringify(state))
   } catch { /* quota exceeded — silently ignore */ }
 }
 
@@ -112,16 +107,17 @@ export default function Quiz() {
   const audioBenar = useRef<HTMLAudioElement | null>(null)
   const audioSalah = useRef<HTMLAudioElement | null>(null)
   const [isMuted, setIsMuted] = useState(false)
-  // Ref selalu sinkron dengan isMuted — dibaca oleh playSound
-  // agar tidak terjadi stale closure di dalam useCallback maupun setState.
-  const isMutedRef = useRef(false)
-  useEffect(() => { isMutedRef.current = isMuted }, [isMuted])
   useEffect(() => {
-    audioBenar.current = new Audio('./benar.mp3')
-    audioSalah.current = new Audio('./salah.mp3')
+    audioBenar.current = new Audio('/benar.mp3')
+    audioSalah.current = new Audio('/salah.mp3')
     audioBenar.current.load()
     audioSalah.current.load()
   }, [])
+
+  // Ref selalu sinkron dengan isMuted — dibaca oleh playSound
+  // agar tidak terjadi stale closure di dalam useCallback.
+  const isMutedRef = useRef(false)
+  useEffect(() => { isMutedRef.current = isMuted }, [isMuted])
 
   const playSound = useCallback((correct: boolean) => {
     if (isMutedRef.current) return
@@ -256,15 +252,18 @@ export default function Quiz() {
     clearBiasa()
   }
 
+  const biasaAnswersRef = useRef<AnswerState[]>([])
+  useEffect(() => { biasaAnswersRef.current = biasaAnswers }, [biasaAnswers])
+
   const handleAnswerBiasa = useCallback((qIdx: number, optIdx: number) => {
-    let shouldPlay: boolean | null = null
+    // Check BEFORE setState so playSound is called outside the updater
+    if (biasaAnswersRef.current[qIdx] !== null) return
     setBiasaAnswers(prev => {
       if (prev[qIdx] !== null) return prev
       const n = [...prev]; n[qIdx] = optIdx
-      shouldPlay = optIdx === biasaQuestions[qIdx]?.correct
       return n
     })
-    if (shouldPlay !== null) playSound(shouldPlay)
+    playSound(optIdx === biasaQuestions[qIdx]?.correct)
   }, [biasaQuestions, playSound])
 
   // ── Mode Tentamen handlers ──
@@ -285,15 +284,18 @@ export default function Quiz() {
     setTentamenAnswers([])
   }, [])
 
+  const tentamenAnswersRef = useRef<AnswerState[]>([])
+  useEffect(() => { tentamenAnswersRef.current = tentamenAnswers }, [tentamenAnswers])
+
   const handleAnswerTentamen = useCallback((optIdx: number) => {
-    let shouldPlay: boolean | null = null
+    // Check BEFORE setState so playSound is called outside the updater
+    if (tentamenAnswersRef.current[currentIdx] !== null) return
     setTentamenAnswers(prev => {
       if (prev[currentIdx] !== null) return prev
       const n = [...prev]; n[currentIdx] = optIdx
-      shouldPlay = optIdx === tentamenQuestions[currentIdx]?.correct
       return n
     })
-    if (shouldPlay !== null) playSound(shouldPlay)
+    playSound(optIdx === tentamenQuestions[currentIdx]?.correct)
     setQPhase('answered_manual')
   }, [currentIdx, tentamenQuestions, playSound])
 
